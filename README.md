@@ -7,7 +7,7 @@
 * Scripts automatically refactor if you move the script to the folder after development
 ### Scene Modularity and Git
 * Build scenes up as modular as possible. This will help with avoiding merge conflicts
-* e.g. Seperate scenes for player, enemy1, player_bullet, etc. 
+* Seperate scenes for player, enemy1, player_bullet, etc. 
 * When building a conglomerate scene (i.e. Level 1), might be worth letting others know you're working on it to avoid merge conflcts. 
 * Always pull before starting; Always push when finish or take a break; Commit often
 
