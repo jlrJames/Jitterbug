@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cds34n7mo3tgp"]
+[gd_scene load_steps=3 format=3 uid="uid://cds34n7mo3tgp"]
 
 [ext_resource type="Script" path="res://Scripts/player_heart.gd" id="1_o8jyl"]
+[ext_resource type="Texture2D" uid="uid://c7ec2qows6qqe" path="res://Assets/Sprites/Player.png" id="2_5d2hc"]
 
 [node name="PlayerHeart" type="CharacterBody2D"]
 script = ExtResource("1_o8jyl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5d2hc")
+hframes = 2
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
