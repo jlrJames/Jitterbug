@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b165ca0fxleev"]
+
+[ext_resource type="Script" path="res://Scenes/player_single_bullet.gd" id="1_mjiwv"]
+[ext_resource type="Texture2D" uid="uid://dv8hpd503bpp" path="res://Assets/Sprites/Player Single Bullet.png" id="2_1v0iu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sbmb"]
+radius = 63.6241
+
+[node name="player_single_bullet" type="Area2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_mjiwv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1v0iu")
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("CircleShape2D_8sbmb")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
