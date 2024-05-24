@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 signal shoot
-@export var speed: float = 100.0
+@export var speed = 100.0
 @onready var animation = $AnimationPlayer
+@onready var sprite = $Sprite2D
 var can_shoot
 
 func _ready():
-	can_shoot = true
+	Global.playerBody = self
 
 func player_movement():
 	var dir = Vector2.ZERO
@@ -24,9 +25,9 @@ func update_animation():
 	if velocity != Vector2.ZERO:
 		animation.play("Run")
 		if velocity.x < 0:
-			$Sprite2D.flip_h = true
+			sprite.flip_h = true
 		elif velocity.x > 0:
-			$Sprite2D.flip_h = false
+			sprite.flip_h = false
 	else:
 		animation.play("Idle")
 
