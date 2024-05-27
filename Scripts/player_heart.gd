@@ -1,28 +1,42 @@
 extends CharacterBody2D
 
+signal shoot
+@export var speed = 100.0
+@onready var animation = $AnimationPlayer
+@onready var sprite = $Sprite2D
+var can_shoot
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+func _ready():
+	Global.playerBody = self
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+func player_movement():
+	var dir = Vector2.ZERO
+	dir = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+	velocity = dir.normalized() * speed
+	
+func player_mouse():
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
+		var dir = get_global_mouse_position() - position
+		shoot.emit(position, dir)
+		can_shoot = false
+		$ShotTimer.start()
+		
+func update_animation():
+	if velocity != Vector2.ZERO:
+		animation.play("Run")
+		if velocity.x < 0:
+			sprite.flip_h = true
+		elif velocity.x > 0:
+			sprite.flip_h = false
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		animation.play("Idle")
 
+func _on_shot_timer_timeout():
+	can_shoot = true
+	
+func _physics_process(delta):
+	player_movement()
+	player_mouse()
+	update_animation()
 	move_and_slide()
+
