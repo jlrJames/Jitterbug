@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0k02mb2sdpi7"]
+
+[ext_resource type="PackedScene" uid="uid://cds34n7mo3tgp" path="res://Scenes/player_heart.tscn" id="1_dconq"]
+[ext_resource type="Script" path="res://Scripts/BulletManager.gd" id="2_c5ciy"]
+[ext_resource type="PackedScene" uid="uid://b165ca0fxleev" path="res://Scenes/player_single_bullet.tscn" id="3_n17ws"]
+[ext_resource type="PackedScene" uid="uid://dci0hxs27qcsp" path="res://Scenes/butterfly_enemy.tscn" id="4_njh7f"]
+[ext_resource type="Texture2D" uid="uid://pehu1uyu4s1w" path="res://Assets/Sprites/healthbarUnder.png" id="6_kjs4d"]
+[ext_resource type="Texture2D" uid="uid://d0ntfduyits3v" path="res://Assets/Sprites/healthbarProgress.png" id="7_y1dm3"]
+[ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="8_18guj"]
+
+[node name="Main" type="Node2D"]
+
+[node name="BulletManager" type="Node2D" parent="."]
+script = ExtResource("2_c5ciy")
+bullet_scene = ExtResource("3_n17ws")
+
+[node name="PlayerHeart" parent="." instance=ExtResource("1_dconq")]
+position = Vector2(438, 248)
+speed = 500.0
+
+[node name="Camera2D" type="Camera2D" parent="PlayerHeart"]
+
+[node name="ButterflyEnemy" parent="." instance=ExtResource("4_njh7f")]
+position = Vector2(168, 182)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerHealth" type="TextureProgressBar" parent="CanvasLayer"]
+offset_right = 238.0
+offset_bottom = 35.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_kjs4d")
+texture_progress = ExtResource("7_y1dm3")
+script = ExtResource("8_18guj")
+
+[connection signal="shoot" from="PlayerHeart" to="BulletManager" method="_on_player_heart_shoot"]
