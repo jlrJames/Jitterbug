@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
 signal shoot
+signal healthChanged
 @export var speed = 100.0
+@export var maxHealth = 10
+@onready var currentHealth = maxHealth
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
 var can_shoot
@@ -30,10 +33,24 @@ func update_animation():
 			sprite.flip_h = false
 	else:
 		animation.play("Idle")
+		
+func frame_freeze(timeScale, duration):
+	sprite.modulate = Color.CRIMSON
+	Engine.time_scale = timeScale
+	await get_tree().create_timer(duration * timeScale).timeout
+	sprite.modulate = Color.WHITE
+	Engine.time_scale = 1
 
 func _on_shot_timer_timeout():
 	can_shoot = true
-	
+
+func _on_player_hitbox_area_entered(area):
+	if area.is_in_group("EnemyBullet"):
+		#print("Bullet Hit")
+		currentHealth -= 1
+		healthChanged.emit()
+		frame_freeze(0.1, .4)
+
 func _physics_process(delta):
 	player_movement()
 	player_mouse()
