@@ -46,6 +46,8 @@ _data = {
 
 [node name="player_single_bullet" type="Area2D"]
 scale = Vector2(0.15, 0.15)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_bc0f4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

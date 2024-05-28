@@ -61,39 +61,40 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_drfno"]
-radius = 42.0476
+radius = 30.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdbt7"]
-size = Vector2(40, 42)
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdc56"]
+radius = 8.24621
 
-[node name="PlayerHeart" type="CharacterBody2D"]
+[node name="PlayerHeart" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_o8jyl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Player"]]
 scale = Vector2(1.64844, 1.63281)
 texture = ExtResource("2_5d2hc")
 hframes = 2
 vframes = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
 libraries = {
 "": SubResource("AnimationLibrary_jpd21")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="player_hitbox" type="Area2D" parent="." groups=["Player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 12)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox" groups=["Player"]]
+position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_drfno")
 debug_color = Color(0.611771, 0.0575202, 0.102144, 0.42)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12)
-shape = SubResource("RectangleShape2D_pdbt7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+position = Vector2(-2, 10)
+shape = SubResource("CircleShape2D_cdc56")
 
-[node name="ShotTimer" type="Timer" parent="."]
+[node name="ShotTimer" type="Timer" parent="." groups=["Player"]]
 wait_time = 0.5
 autostart = true
 
+[connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
