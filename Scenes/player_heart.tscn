@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cds34n7mo3tgp"]
+[gd_scene load_steps=10 format=3 uid="uid://cds34n7mo3tgp"]
 
 [ext_resource type="Script" path="res://Scripts/player_heart.gd" id="1_o8jyl"]
 [ext_resource type="Texture2D" uid="uid://c7ec2qows6qqe" path="res://Assets/Sprites/Player.png" id="2_5d2hc"]
@@ -66,6 +66,9 @@ radius = 30.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_cdc56"]
 radius = 8.24621
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_m68m7"]
+radius = 38.0
+
 [node name="PlayerHeart" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_o8jyl")
@@ -82,6 +85,7 @@ libraries = {
 }
 
 [node name="player_hitbox" type="Area2D" parent="." groups=["Player"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox" groups=["Player"]]
 position = Vector2(0, 10)
@@ -96,5 +100,17 @@ shape = SubResource("CircleShape2D_cdc56")
 wait_time = 0.5
 autostart = true
 
+[node name="player_pick_up" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_pick_up" groups=["Player"]]
+position = Vector2(-2, 10)
+shape = SubResource("CircleShape2D_m68m7")
+debug_color = Color(0.444043, 0.419314, 0.0911384, 0.42)
+
+[node name="SpeedBoost" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
+[connection signal="area_entered" from="player_pick_up" to="." method="_on_player_pick_up_area_entered"]
+[connection signal="timeout" from="SpeedBoost" to="." method="_on_speed_boost_timeout"]
