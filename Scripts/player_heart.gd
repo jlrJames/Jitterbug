@@ -3,7 +3,9 @@ extends CharacterBody2D
 signal shoot
 signal healthChanged
 signal healthZero
-@export var speed = 100.0
+@export var standardSpeed = 300.0
+var boostedSpeed = standardSpeed * 2
+var speedBoost = false
 @export var maxHealth = 10
 @onready var currentHealth = maxHealth
 @onready var animation = $AnimationPlayer
@@ -16,7 +18,10 @@ func _ready():
 func player_movement():
 	var dir = Vector2.ZERO
 	dir = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-	velocity = dir.normalized() * speed
+	if (!speedBoost):
+		velocity = dir.normalized() * standardSpeed
+	else :
+		velocity = dir.normalized() * boostedSpeed
 	
 func player_mouse():
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
@@ -56,9 +61,21 @@ func _on_player_hitbox_area_entered(area):
 		else:
 			frame_freeze(0.1, .4)
 
+func _on_player_pick_up_area_entered(area):
+	if area.name == "SpeedPowerup":
+		speed_boost()
+		sprite.modulate = Color.YELLOW
+
+func speed_boost():
+	$SpeedBoost.start()
+	speedBoost = true
+
+func _on_speed_boost_timeout():
+	speedBoost = false
+	sprite.modulate = Color.WHITE
+
 func _physics_process(delta):
 	player_movement()
 	player_mouse()
 	update_animation()
 	move_and_slide()
-
