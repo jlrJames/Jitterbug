@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 const bullet_scene = preload("res://Scenes/butterfly_bullet.tscn")
+@export var maxHealth = 3
+var currentHealth = maxHealth
 @onready var shoot_timer = $Shoot
 @onready var rotater = $Rotater
 const speed = 40
@@ -58,13 +60,6 @@ func choose(array):
 	array.shuffle()
 	return array.front()
 
-func _on_area_2d_body_entered(body):
-	if body == Global.playerBody:
-		is_chase = true
-
-func _on_area_2d_body_exited(body):
-	if body == Global.playerBody:
-		is_chase = false
 
 func _on_shoot_timeout():
 	for s in rotater.get_children():
@@ -72,3 +67,24 @@ func _on_shoot_timeout():
 		get_tree().root.add_child(bullet)
 		bullet.position = s.global_position
 		bullet.rotation = s.global_rotation
+
+func _on_player_enter_body_entered(body):
+	if body == Global.playerBody:
+		is_chase = true
+
+func _on_player_enter_body_exited(body):
+	if body == Global.playerBody:
+		is_chase = false
+		
+func die():
+	queue_free()
+
+func _on_enemy_hurt_box_area_entered(area):
+	if area.is_in_group("PlayerBullet"):
+		#print("Enemy Hit!")
+		currentHealth -= 1
+		if currentHealth <= 0:
+			die()
+		sprite.modulate = Color(10,10,10,10)
+		await get_tree().create_timer(0.05).timeout
+		sprite.modulate = Color.WHITE
