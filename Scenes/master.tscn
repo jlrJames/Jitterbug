@@ -32,5 +32,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("6_kjs4d")
 texture_progress = ExtResource("7_y1dm3")
 script = ExtResource("8_18guj")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="shoot" from="PlayerHeart" to="BulletManager" method="_on_player_heart_shoot"]

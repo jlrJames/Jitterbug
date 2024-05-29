@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal shoot
 signal healthChanged
+signal healthZero
 @export var speed = 100.0
 @export var maxHealth = 10
 @onready var currentHealth = maxHealth
@@ -49,7 +50,11 @@ func _on_player_hitbox_area_entered(area):
 		#print("Bullet Hit")
 		currentHealth -= 1
 		healthChanged.emit()
-		frame_freeze(0.1, .4)
+		# Check if health is at 0, emit death signal
+		if self.currentHealth <= 0:
+			healthZero.emit()
+		else:
+			frame_freeze(0.1, .4)
 
 func _physics_process(delta):
 	player_movement()
