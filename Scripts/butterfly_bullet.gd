@@ -24,3 +24,6 @@ func _on_area_entered(area):
 	if area.name == "player_hitbox":
 		print("player hit")
 		queue_free()
+	if area.name == "obstacle_hitbox":
+		queue_free()
+

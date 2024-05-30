@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0k02mb2sdpi7"]
+[gd_scene load_steps=10 format=3 uid="uid://b0k02mb2sdpi7"]
 
 [ext_resource type="PackedScene" uid="uid://cds34n7mo3tgp" path="res://Scenes/player_heart.tscn" id="1_dconq"]
 [ext_resource type="Script" path="res://Scripts/BulletManager.gd" id="2_c5ciy"]
 [ext_resource type="PackedScene" uid="uid://b165ca0fxleev" path="res://Scenes/player_single_bullet.tscn" id="3_n17ws"]
 [ext_resource type="PackedScene" uid="uid://dci0hxs27qcsp" path="res://Scenes/butterfly_enemy.tscn" id="4_njh7f"]
+[ext_resource type="PackedScene" uid="uid://bk42ikyp8mxas" path="res://Scenes/obstacle_fountain.tscn" id="6_1jshe"]
 [ext_resource type="Texture2D" uid="uid://pehu1uyu4s1w" path="res://Assets/Sprites/healthbarUnder.png" id="6_kjs4d"]
 [ext_resource type="Texture2D" uid="uid://d0ntfduyits3v" path="res://Assets/Sprites/healthbarProgress.png" id="7_y1dm3"]
 [ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/speed_powerup.tscn" id="8_1kh50"]
@@ -20,12 +21,14 @@ position = Vector2(283, 358)
 
 [node name="PlayerHeart" parent="." instance=ExtResource("1_dconq")]
 position = Vector2(438, 248)
-speed = 500.0
 
 [node name="Camera2D" type="Camera2D" parent="PlayerHeart"]
 
 [node name="ButterflyEnemy" parent="." instance=ExtResource("4_njh7f")]
 position = Vector2(168, 182)
+
+[node name="obstacle_fountain" parent="." instance=ExtResource("6_1jshe")]
+position = Vector2(45, 75)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
