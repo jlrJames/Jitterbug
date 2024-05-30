@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dci0hxs27qcsp" path="res://Scenes/butterfly_enemy.tscn" id="4_njh7f"]
 [ext_resource type="Texture2D" uid="uid://pehu1uyu4s1w" path="res://Assets/Sprites/healthbarUnder.png" id="6_kjs4d"]
 [ext_resource type="Texture2D" uid="uid://d0ntfduyits3v" path="res://Assets/Sprites/healthbarProgress.png" id="7_y1dm3"]
-[ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/speed_powerup.tscn" id="8_1kh50"]
+[ext_resource type="PackedScene" path="res://Scenes/speed_powerup.tscn" id="8_1kh50"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="8_18guj"]
 
 [node name="Main" type="Node2D"]
@@ -20,7 +20,6 @@ position = Vector2(283, 358)
 
 [node name="PlayerHeart" parent="." instance=ExtResource("1_dconq")]
 position = Vector2(438, 248)
-speed = 500.0
 
 [node name="Camera2D" type="Camera2D" parent="PlayerHeart"]
 
