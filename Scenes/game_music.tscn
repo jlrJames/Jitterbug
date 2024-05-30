@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfj2h22gkh2x5"]
+
+[ext_resource type="Script" path="res://Scripts/GameMusic.gd" id="1_lt6uw"]
+
+[node name="GameMusic" type="AudioStreamPlayer2D"]
+volume_db = -20.0
+script = ExtResource("1_lt6uw")
