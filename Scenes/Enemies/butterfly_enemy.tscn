@@ -50,42 +50,42 @@ radius = 271.398
 [sub_resource type="CircleShape2D" id="CircleShape2D_rt0m0"]
 radius = 37.054
 
-[node name="ButterflyEnemy" type="CharacterBody2D"]
+[node name="ButterflyEnemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_n4ic4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Enemy"]]
 texture = ExtResource("1_o6uht")
 hframes = 2
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Enemy"]]
 libraries = {
 "": SubResource("AnimationLibrary_w7w4c")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 visible = false
 position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_kmdkk")
 
-[node name="Move" type="Timer" parent="."]
+[node name="Move" type="Timer" parent="." groups=["Enemy"]]
 autostart = true
 
-[node name="Shoot" type="Timer" parent="."]
+[node name="Shoot" type="Timer" parent="." groups=["Enemy"]]
 wait_time = 2.0
 
-[node name="Rotater" type="Node2D" parent="."]
+[node name="Rotater" type="Node2D" parent="." groups=["Enemy"]]
 
-[node name="PlayerEnter" type="Area2D" parent="."]
+[node name="PlayerEnter" type="Area2D" parent="." groups=["Enemy"]]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEnter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEnter" groups=["Enemy"]]
 shape = SubResource("CircleShape2D_qqnpu")
 debug_color = Color(0.713726, 0.576471, 0, 0.172549)
 
-[node name="EnemyHurtBox" type="Area2D" parent="."]
+[node name="EnemyHurtBox" type="Area2D" parent="." groups=["Enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox" groups=["Enemy"]]
 position = Vector2(-3, -6)
 shape = SubResource("CircleShape2D_rt0m0")
 debug_color = Color(0.429307, 0.0461968, 0.0148109, 0.513726)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1yqa5ucirkge"]
 
 [ext_resource type="Script" path="res://Scripts/Start Game.gd" id="1_gwu36"]
-[ext_resource type="PackedScene" uid="uid://bfkmukb88bp7v" path="res://Scenes/wall_tile_map.tscn" id="2_lbv3v"]
+[ext_resource type="PackedScene" uid="uid://bfkmukb88bp7v" path="res://Scenes/Levels/wall_tile_map.tscn" id="2_lbv3v"]
 
 [node name="Start Game" type="Node2D"]
 position = Vector2(502, 252)

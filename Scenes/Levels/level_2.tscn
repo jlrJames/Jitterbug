@@ -1,16 +1,16 @@
 [gd_scene load_steps=12 format=3 uid="uid://ca2uwrs8ywiry"]
 
-[ext_resource type="Script" path="res://Scenes/level_2.gd" id="1_kkqf3"]
-[ext_resource type="PackedScene" uid="uid://bfkmukb88bp7v" path="res://Scenes/wall_tile_map.tscn" id="2_hma2q"]
+[ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_kkqf3"]
+[ext_resource type="PackedScene" uid="uid://bfkmukb88bp7v" path="res://Scenes/Levels/wall_tile_map.tscn" id="2_hma2q"]
 [ext_resource type="Script" path="res://Scripts/BulletManager.gd" id="3_52lkr"]
-[ext_resource type="PackedScene" uid="uid://b165ca0fxleev" path="res://Scenes/player_single_bullet.tscn" id="4_xruy7"]
-[ext_resource type="PackedScene" uid="uid://c42kvq6wgn7bd" path="res://Scenes/level_manager.tscn" id="5_5y48e"]
-[ext_resource type="PackedScene" uid="uid://cds34n7mo3tgp" path="res://Scenes/player_heart.tscn" id="6_d0s6i"]
-[ext_resource type="PackedScene" uid="uid://dci0hxs27qcsp" path="res://Scenes/butterfly_enemy.tscn" id="7_jtf7c"]
+[ext_resource type="PackedScene" uid="uid://b165ca0fxleev" path="res://Scenes/Bullets/player_single_bullet.tscn" id="4_xruy7"]
+[ext_resource type="PackedScene" uid="uid://c42kvq6wgn7bd" path="res://Scenes/Levels/level_manager.tscn" id="5_5y48e"]
+[ext_resource type="PackedScene" uid="uid://cds34n7mo3tgp" path="res://Scenes/Player/player_heart.tscn" id="6_d0s6i"]
+[ext_resource type="PackedScene" uid="uid://dci0hxs27qcsp" path="res://Scenes/Enemies/butterfly_enemy.tscn" id="7_jtf7c"]
 [ext_resource type="Texture2D" uid="uid://pehu1uyu4s1w" path="res://Assets/Sprites/healthbarUnder.png" id="8_16kqh"]
 [ext_resource type="Texture2D" uid="uid://d0ntfduyits3v" path="res://Assets/Sprites/healthbarProgress.png" id="9_g4xcb"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="10_qcghr"]
-[ext_resource type="PackedScene" path="res://Scenes/speed_powerup.tscn" id="11_3urqy"]
+[ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/Objects/speed_powerup.tscn" id="11_3urqy"]
 
 [node name="level2" type="Node2D"]
 script = ExtResource("1_kkqf3")
