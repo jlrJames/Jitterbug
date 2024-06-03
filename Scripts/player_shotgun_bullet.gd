@@ -6,6 +6,7 @@ var direction: Vector2
 
 func _ready():
 	animation.play("fire")
+	$ShotgunTimer.start(.5)
 
 func _process(delta):
 	translate(direction.normalized() * speed * delta)
@@ -13,7 +14,6 @@ func _process(delta):
 
 func _on_timer_timeout():
 	queue_free()
-
 
 func _on_area_entered(area):
 	if area.name == "EnemyHurtBox":

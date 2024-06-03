@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const bullet_scene = preload("res://Scenes/butterfly_bullet.tscn")
+const bullet_scene = preload("res://Scenes/Bullets/butterfly_bullet.tscn")
 @export var maxHealth = 3
 var currentHealth = maxHealth
 @onready var shoot_timer = $Shoot

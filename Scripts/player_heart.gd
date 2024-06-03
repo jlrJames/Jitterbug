@@ -11,6 +11,13 @@ var speedBoost = false
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
 var can_shoot
+var single_bullet = preload("res://Scenes/Bullets/player_single_bullet.tscn")
+var shotgun_bullet = preload("res://Scenes/Bullets/player_shotgun_bullet.tscn")
+var follow_bullet = preload("res://Scenes/Bullets/player_follow_bullet.tscn")
+@export var fire_type = 1
+# 1 - normal
+# 2 - shotgun
+# 3 - follow
 
 func _ready():
 	Global.playerBody = self
@@ -22,14 +29,47 @@ func player_movement():
 		velocity = dir.normalized() * standardSpeed
 	else :
 		velocity = dir.normalized() * boostedSpeed
-	
-func player_mouse():
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
-		var dir = get_global_mouse_position() - position
-		shoot.emit(position, dir)
-		can_shoot = false
-		$ShotTimer.start()
 		
+func aim_fire():
+	var bullet = follow_bullet.instantiate()
+	bullet.direction = (get_global_mouse_position() - global_position).normalized()
+	bullet.global_position = global_position
+	bullet.rotation = bullet.direction.angle()
+	get_tree().get_root().add_child(bullet)
+	
+func fire():
+	if fire_type == 1:
+		var bullet = single_bullet.instantiate()
+		bullet.direction = get_global_mouse_position() - global_position
+		bullet.global_position = global_position
+		get_tree().get_root().add_child(bullet)
+	elif fire_type == 2:
+		var direction = get_global_mouse_position() - global_position
+		var bullet1 = shotgun_bullet.instantiate()
+		bullet1.direction = direction
+		bullet1.global_position = global_position
+		#bullet1.shotgun = true
+		get_tree().get_root().add_child(bullet1)
+			
+		var angle_offset = deg_to_rad(10)
+		var bullet2 = shotgun_bullet.instantiate()
+		bullet2.direction = direction.rotated(angle_offset)
+		bullet2.global_position = global_position
+		#bullet2.shotgun = true
+		get_tree().get_root().add_child(bullet2)
+
+		var bullet3 = shotgun_bullet.instantiate()
+		bullet3.direction = direction.rotated(-angle_offset)
+		bullet3.global_position = global_position
+		#bullet3.shotgun = true
+		get_tree().get_root().add_child(bullet3)
+	elif fire_type == 3:
+		aim_fire()
+
+	can_shoot = false
+	$ShotTimer.start()
+
+
 func update_animation():
 	if velocity != Vector2.ZERO:
 		animation.play("Run")
@@ -76,6 +116,7 @@ func _on_speed_boost_timeout():
 
 func _physics_process(delta):
 	player_movement()
-	player_mouse()
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
+		fire()
 	update_animation()
 	move_and_slide()

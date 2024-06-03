@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://4i04t6dg1t2m"]
+
+[ext_resource type="Texture2D" uid="uid://dv8hpd503bpp" path="res://Assets/Sprites/Player Single Bullet.png" id="1_cnlvk"]
+[ext_resource type="Script" path="res://Scripts/player_follow_bullet.gd" id="1_v7070"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_brvs5"]
+radius = 63.0079
+
+[node name="PlayerFollowBullet" type="Area2D" groups=["PlayerBullet"]]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_v7070")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cnlvk")
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["PlayerBullet"]]
+shape = SubResource("CircleShape2D_brvs5")
+
+[node name="AimingArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AimingArea"]
+position = Vector2(-13.3333, 60)
+scale = Vector2(6.09279, 10.9629)
+polygon = PackedVector2Array(2.97945, -5.37931, 274.788, -99.089, 274.788, 88.5848)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="AimingArea" to="." method="_on_aiming_area_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
