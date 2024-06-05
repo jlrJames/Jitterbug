@@ -86,9 +86,13 @@ func die():
 func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):
 		#print("Enemy Hit!")
-		currentHealth -= 1
-		if currentHealth <= 0:
-			die()
+		if area.name == "PlayerIncreasedDamageBullet" or area.name == "PlayerShotgunIncreasedDamageBullet":
+			currentHealth -= 3
+		else:
+			currentHealth -= 1
 		sprite.modulate = Color(10,10,10,10)
 		await get_tree().create_timer(0.05).timeout
 		sprite.modulate = Color.WHITE
+		
+	if currentHealth <= 0:
+		die()

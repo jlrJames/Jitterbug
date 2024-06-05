@@ -2,10 +2,11 @@ extends Area2D
 
 @export var speed = 700
 var direction: Vector2
-@onready var animation = $AnimationPlayer
+#@onready var animation = $AnimationPlayer
 
 func _ready():
-	animation.play("fire")
+	#animation.play("fire")
+	pass
 
 func _process(delta):
 	translate(direction.normalized() * speed * delta)

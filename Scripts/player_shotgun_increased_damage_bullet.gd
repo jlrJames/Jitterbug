@@ -6,6 +6,7 @@ var direction: Vector2
 
 func _ready():
 	animation.play("fire")
+	$ShotgunTimer.start(.5)
 
 func _process(delta):
 	translate(direction.normalized() * speed * delta)
@@ -28,3 +29,7 @@ func _on_body_entered(body):
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
+
+
+func _on_shotgun_timer_timeout():
+	pass # Replace with function body.

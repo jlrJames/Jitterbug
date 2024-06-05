@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0k02mb2sdpi7"]
+[gd_scene load_steps=14 format=3 uid="uid://b0k02mb2sdpi7"]
 
 [ext_resource type="Script" path="res://Scripts/BulletManager.gd" id="1_vn0ve"]
 [ext_resource type="PackedScene" uid="uid://b165ca0fxleev" path="res://Scenes/Bullets/player_single_bullet.tscn" id="2_sgtpm"]
-[ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/Objects/speed_powerup.tscn" id="3_6ivp4"]
+[ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/PowerUps/speed_powerup.tscn" id="3_6ivp4"]
 [ext_resource type="PackedScene" uid="uid://cds34n7mo3tgp" path="res://Scenes/Player/player_heart.tscn" id="4_lw61e"]
 [ext_resource type="PackedScene" uid="uid://dci0hxs27qcsp" path="res://Scenes/Enemies/butterfly_enemy.tscn" id="5_gq5nt"]
 [ext_resource type="PackedScene" uid="uid://bk42ikyp8mxas" path="res://Scenes/Objects/obstacle_fountain.tscn" id="6_rdwyv"]
 [ext_resource type="Texture2D" uid="uid://pehu1uyu4s1w" path="res://Assets/Sprites/healthbarUnder.png" id="7_upenp"]
 [ext_resource type="Texture2D" uid="uid://d0ntfduyits3v" path="res://Assets/Sprites/healthbarProgress.png" id="8_t834i"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="9_8gy2m"]
+[ext_resource type="PackedScene" uid="uid://b0o5xleknho8d" path="res://Scenes/PowerUps/shotgun_powerup.tscn" id="10_7o4ey"]
+[ext_resource type="PackedScene" uid="uid://b7l54b6icuuyc" path="res://Scenes/PowerUps/follow_bullet_powerup.tscn" id="11_d7psq"]
+[ext_resource type="PackedScene" uid="uid://djolqlqv2g2hj" path="res://Scenes/PowerUps/shield_powerup.tscn" id="12_d62xs"]
+[ext_resource type="PackedScene" uid="uid://d1rhjises43vv" path="res://Scenes/PowerUps/damage_increase_powerup.tscn" id="13_wtlcb"]
 
 [node name="Main" type="Node2D"]
 
@@ -18,6 +22,18 @@ bullet_scene = ExtResource("2_sgtpm")
 
 [node name="SpeedPowerup" parent="." instance=ExtResource("3_6ivp4")]
 position = Vector2(283, 358)
+
+[node name="ShotgunPowerup" parent="." instance=ExtResource("10_7o4ey")]
+position = Vector2(515, 363)
+
+[node name="FollowBulletPowerup" parent="." instance=ExtResource("11_d7psq")]
+position = Vector2(562, 143)
+
+[node name="ShieldPowerup" parent="." instance=ExtResource("12_d62xs")]
+position = Vector2(575, 248)
+
+[node name="DamageIncreasePowerup" parent="." instance=ExtResource("13_wtlcb")]
+position = Vector2(409, 83)
 
 [node name="PlayerHeart" parent="." instance=ExtResource("4_lw61e")]
 position = Vector2(438, 248)

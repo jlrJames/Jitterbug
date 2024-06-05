@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0o5xleknho8d"]
+
+[ext_resource type="Texture2D" uid="uid://5xtdt3m4g6ph" path="res://Assets/Sprites/shotgun_powerup.png" id="1_lg0p8"]
+[ext_resource type="Script" path="res://Scripts/shotgun_powerup.gd" id="1_wv85l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvkx2"]
+size = Vector2(47.875, 69.625)
+
+[sub_resource type="Animation" id="Animation_rlu8s"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_tlx1m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3hhx"]
+_data = {
+"RESET": SubResource("Animation_tlx1m"),
+"idle": SubResource("Animation_rlu8s")
+}
+
+[node name="ShotgunPowerup" type="Area2D" groups=["PowerUp"]]
+script = ExtResource("1_wv85l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["PowerUp"]]
+scale = Vector2(1.45313, 1.4375)
+texture = ExtResource("1_lg0p8")
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["PowerUp"]]
+shape = SubResource("RectangleShape2D_qvkx2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["PowerUp"]]
+libraries = {
+"": SubResource("AnimationLibrary_w3hhx")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

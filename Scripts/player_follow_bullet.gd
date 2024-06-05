@@ -6,10 +6,12 @@ var target = null
 
 func _process(delta):
 	translate(direction * speed * delta)
-	if target:
+	if target and is_instance_valid(target):
 		direction = target.global_position - global_position
 		direction = direction.normalized()
 		look_at(target.global_position)
+	else:
+		target = null
 
 func _on_area_entered(area):
 	if area.name == "EnemyHurtBox":
