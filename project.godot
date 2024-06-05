@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Jitterbug"
-run/main_scene="res://Scenes/master.tscn"
+run/main_scene="res://Scenes/Levels/start_game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Scripts/Global.gd"
+GameMusic="*res://Scenes/Extra/game_music.tscn"
 
 [input]
 

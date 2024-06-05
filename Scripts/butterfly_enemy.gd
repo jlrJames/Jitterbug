@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const bullet_scene = preload("res://Scenes/butterfly_bullet.tscn")
+const bullet_scene = preload("res://Scenes/Bullets/butterfly_bullet.tscn")
 @export var maxHealth = 3
 var currentHealth = maxHealth
 @onready var shoot_timer = $Shoot
@@ -15,6 +15,8 @@ const rotate_speed = 100
 const shooter_timer_wait_time = .5
 const radius = 20
 const spawn_point_count = 1
+signal enemy_die
+
 
 func _ready():
 	is_chase = false
@@ -78,6 +80,8 @@ func _on_player_enter_body_exited(body):
 		
 func die():
 	queue_free()
+	enemy_die.emit()
+	
 
 func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):

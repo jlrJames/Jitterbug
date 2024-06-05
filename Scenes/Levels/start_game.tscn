@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1yqa5ucirkge"]
+
+[ext_resource type="Script" path="res://Scripts/Start Game.gd" id="1_gwu36"]
+[ext_resource type="PackedScene" uid="uid://bfkmukb88bp7v" path="res://Scenes/Levels/wall_tile_map.tscn" id="2_lbv3v"]
+
+[node name="Start Game" type="Node2D"]
+position = Vector2(502, 252)
+script = ExtResource("1_gwu36")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Jitterbug
+An Emotional Bullet Hell"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 58.0
+offset_top = 69.0
+offset_right = 149.0
+offset_bottom = 100.0
+text = "Play Game"
+
+[node name="WallTileMap" parent="." instance=ExtResource("2_lbv3v")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
