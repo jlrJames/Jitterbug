@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://pehu1uyu4s1w" path="res://Assets/Sprites/healthbarUnder.png" id="8_c37kr"]
 [ext_resource type="Texture2D" uid="uid://d0ntfduyits3v" path="res://Assets/Sprites/healthbarProgress.png" id="9_mo8ki"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="10_tojsi"]
-[ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/Objects/speed_powerup.tscn" id="11_ws0iw"]
+[ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/PowerUps/speed_powerup.tscn" id="11_ws0iw"]
 
 [node name="level3" type="Node2D"]
 script = ExtResource("1_wln6t")
