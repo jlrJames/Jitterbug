@@ -6,6 +6,7 @@ var direction: Vector2
 
 func _ready():
 	animation.play("fire")
+	$ShootSound.play()
 
 func _process(delta):
 	translate(direction.normalized() * speed * delta)
