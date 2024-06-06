@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0k02mb2sdpi7"]
+
+[ext_resource type="Script" path="res://Scripts/BulletManager.gd" id="1_vn0ve"]
+[ext_resource type="PackedScene" uid="uid://b165ca0fxleev" path="res://Scenes/Bullets/player_single_bullet.tscn" id="2_sgtpm"]
+[ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/Objects/speed_powerup.tscn" id="3_6ivp4"]
+[ext_resource type="PackedScene" uid="uid://cds34n7mo3tgp" path="res://Scenes/Player/player_heart.tscn" id="4_lw61e"]
+[ext_resource type="PackedScene" uid="uid://dci0hxs27qcsp" path="res://Scenes/Enemies/butterfly_enemy.tscn" id="5_gq5nt"]
+[ext_resource type="PackedScene" uid="uid://bk42ikyp8mxas" path="res://Scenes/Objects/obstacle_fountain.tscn" id="6_rdwyv"]
+[ext_resource type="Texture2D" uid="uid://pehu1uyu4s1w" path="res://Assets/Sprites/healthbarUnder.png" id="7_upenp"]
+[ext_resource type="Texture2D" uid="uid://d0ntfduyits3v" path="res://Assets/Sprites/healthbarProgress.png" id="8_t834i"]
+[ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="9_8gy2m"]
+
+[node name="Main" type="Node2D"]
+
+[node name="BulletManager" type="Node2D" parent="."]
+script = ExtResource("1_vn0ve")
+bullet_scene = ExtResource("2_sgtpm")
+
+[node name="SpeedPowerup" parent="." instance=ExtResource("3_6ivp4")]
+position = Vector2(283, 358)
+
+[node name="PlayerHeart" parent="." instance=ExtResource("4_lw61e")]
+position = Vector2(438, 248)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerHeart"]
+
+[node name="ButterflyEnemy" parent="." instance=ExtResource("5_gq5nt")]
+position = Vector2(168, 182)
+
+[node name="obstacle_fountain" parent="." instance=ExtResource("6_rdwyv")]
+position = Vector2(45, 75)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerHealth" type="TextureProgressBar" parent="CanvasLayer"]
+offset_right = 238.0
+offset_bottom = 35.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_upenp")
+texture_progress = ExtResource("8_t834i")
+script = ExtResource("9_8gy2m")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="shoot" from="PlayerHeart" to="BulletManager" method="_on_player_heart_shoot"]

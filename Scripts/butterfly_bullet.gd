@@ -22,5 +22,12 @@ func _on_timer_timeout():
 
 func _on_area_entered(area):
 	if area.name == "player_hitbox":
-		#print("player hit")
+		print("player hit")
+		queue_free()
+
+	if area.name == "obstacle_hitbox":
+		queue_free()
+
+func _on_body_entered(body):
+	if body is TileMap:
 		queue_free()

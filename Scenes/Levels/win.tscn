@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7mmvsoeg50qv"]
+
+[node name="Win" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 425.0
+offset_top = 319.0
+offset_right = 656.0
+offset_bottom = 342.0
+text = "Thanks for playing our demo! "
