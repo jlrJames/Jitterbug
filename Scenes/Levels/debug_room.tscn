@@ -24,16 +24,16 @@ bullet_scene = ExtResource("2_sgtpm")
 position = Vector2(283, 358)
 
 [node name="ShotgunPowerup" parent="." instance=ExtResource("10_7o4ey")]
-position = Vector2(515, 363)
+position = Vector2(362, 97)
 
 [node name="FollowBulletPowerup" parent="." instance=ExtResource("11_d7psq")]
-position = Vector2(562, 143)
+position = Vector2(602, 154)
 
 [node name="ShieldPowerup" parent="." instance=ExtResource("12_d62xs")]
-position = Vector2(575, 248)
+position = Vector2(615, 259)
 
 [node name="DamageIncreasePowerup" parent="." instance=ExtResource("13_wtlcb")]
-position = Vector2(409, 83)
+position = Vector2(449, 94)
 
 [node name="PlayerHeart" parent="." instance=ExtResource("4_lw61e")]
 position = Vector2(438, 248)

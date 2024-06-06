@@ -17,7 +17,6 @@ var single_bullet = preload("res://Scenes/Bullets/player_single_bullet.tscn")
 var shotgun_bullet = preload("res://Scenes/Bullets/player_shotgun_bullet.tscn")
 var follow_bullet = preload("res://Scenes/Bullets/player_follow_bullet.tscn")
 var increased_damage_bullet = preload("res://Scenes/Bullets/player_increased_damage_bullet.tscn")
-var increased_shotgun_damage_bullet = preload("res://Scenes/Bullets/player_shotgun_increased_damage_bullet.tscn")
 @export var fire_type = 1
 # 1 - normal
 # 2 - shotgun
@@ -57,31 +56,26 @@ func fire():
 		get_tree().get_root().add_child(bullet)
 	elif fire_type == 2:
 		var direction = get_global_mouse_position() - global_position
-		
 		var bullet1
 		var bullet2
 		var bullet3
-		if !increasedDamage:
-			bullet1 = shotgun_bullet.instantiate()
-			bullet2 = shotgun_bullet.instantiate()
-			bullet3 = shotgun_bullet.instantiate()
-		else:
-			bullet1 = increased_shotgun_damage_bullet.instantiate()
-			bullet2 = increased_shotgun_damage_bullet.instantiate()
-			bullet3 = increased_shotgun_damage_bullet.instantiate()
 		
+		bullet1 = shotgun_bullet.instantiate()
 		bullet1.direction = direction
 		bullet1.global_position = global_position
 		get_tree().get_root().add_child(bullet1)
-			
+		
+		bullet2 = shotgun_bullet.instantiate()
 		var angle_offset = deg_to_rad(10)
 		bullet2.direction = direction.rotated(angle_offset)
 		bullet2.global_position = global_position
 		get_tree().get_root().add_child(bullet2)
-
+		
+		bullet3 = shotgun_bullet.instantiate()
 		bullet3.direction = direction.rotated(-angle_offset)
 		bullet3.global_position = global_position
 		get_tree().get_root().add_child(bullet3)
+		
 	elif fire_type == 3:
 		aim_fire()
 
@@ -127,13 +121,11 @@ func _on_player_pick_up_area_entered(area):
 	elif area.name == "DamageIncreasePowerup":
 		increased_damage()
 	elif area.name == "ShotgunPowerup":
-		fire_type = 2
-		$ShotgunTimer.start()
+		shotgun()
 	elif area.name == "FollowBulletPowerup":
-		fire_type = 3
-		$FollowTimer.start()
-
-func speed_boost():
+		follow()
+		
+func turn_off_everthing():
 	if $SheildTimer.time_left > 0:
 		$SheildTimer.stop()
 		$SheildTimer.emit_signal("timeout")
@@ -141,33 +133,46 @@ func speed_boost():
 	if $IncreasedDamageTimer.time_left > 0:
 		$IncreasedDamageTimer.stop()
 		$IncreasedDamageTimer.emit_signal("timeout")
+		
+	if $SpeedBoostTimer.time_left > 0:
+		$SpeedBoostTimer.stop()
+		$SpeedBoostTimer.emit_signal("timeout")
 	
+	if $ShotgunTimer.time_left > 0:
+		$ShotgunTimer.stop()
+		$ShotgunTimer.emit_signal("timeout")
+	
+	if $FollowTimer.time_left > 0:
+		$FollowTimer.stop()
+		$FollowTimer.emit_signal("timeout")
+
+func shotgun():
+	turn_off_everthing()
+	fire_type = 2
+	$ShotgunTimer.start()
+	sprite.modulate = Color.WHITE
+		
+func follow():
+	turn_off_everthing()
+	fire_type = 3
+	$FollowTimer.start()
+	sprite.modulate = Color.WHITE
+
+func speed_boost():
+	turn_off_everthing()
 	$SpeedBoostTimer.start()
 	speedBoost = true
 	sprite.modulate = Color.YELLOW
 
 func shield():
-	if $SpeedBoostTimer.time_left > 0:
-		$SpeedBoostTimer.stop()
-		$SpeedBoostTimer.emit_signal("timeout")
-	
-	if $IncreasedDamageTimer.time_left > 0:
-		$IncreasedDamageTimer.stop()
-		$IncreasedDamageTimer.emit_signal("timeout")
-	
+	turn_off_everthing()
 	$SheildTimer.start()
 	shieldPowerup = true
 	sprite.modulate = Color.SKY_BLUE
 	
 func increased_damage():
-	if $SheildTimer.time_left > 0:
-		$SheildTimer.stop()
-		$SheildTimer.emit_signal("timeout")
-	
-	if $SpeedBoostTimer.time_left > 0:
-		$SpeedBoostTimer.stop()
-		$SpeedBoostTimer.emit_signal("timeout")
-	
+	turn_off_everthing()
+	fire_type = 1
 	increasedDamage = true
 	$IncreasedDamageTimer.start()
 	sprite.modulate = Color.DARK_RED

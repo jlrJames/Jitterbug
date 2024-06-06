@@ -86,7 +86,8 @@ func die():
 func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):
 		#print("Enemy Hit!")
-		if area.name == "PlayerIncreasedDamageBullet" or area.name == "PlayerShotgunIncreasedDamageBullet":
+		print(area.name)
+		if area.name == "PlayerIncreasedDamageBullet":
 			currentHealth -= 3
 		else:
 			currentHealth -= 1
