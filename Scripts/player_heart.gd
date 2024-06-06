@@ -114,15 +114,15 @@ func _on_player_hitbox_area_entered(area):
 			frame_freeze(0.1, .4)
 
 func _on_player_pick_up_area_entered(area):
-	if area.name == "SpeedPowerup":
+	if area.name.substr(0, 12) == "SpeedPowerup":
 		speed_boost()
-	elif area.name == "ShieldPowerup":
+	elif area.name.substr(0, 13) == "ShieldPowerup":
 		shield()
-	elif area.name == "DamageIncreasePowerup":
+	elif area.name.substr(0, 21) == "DamageIncreasePowerup":
 		increased_damage()
-	elif area.name == "ShotgunPowerup":
+	elif area.name.substr(0, 14) == "ShotgunPowerup":
 		shotgun()
-	elif area.name == "FollowBulletPowerup":
+	elif area.name.substr(0, 19) == "FollowBulletPowerup":
 		follow()
 		
 func turn_off_everthing():

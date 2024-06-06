@@ -107,16 +107,16 @@ shape = SubResource("CircleShape2D_m68m7")
 debug_color = Color(0.444043, 0.419314, 0.0911384, 0.42)
 
 [node name="SpeedBoostTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 
 [node name="SheildTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 
 [node name="ShotgunTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 10.0
 
 [node name="FollowTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 
 [node name="IncreasedDamageTimer" type="Timer" parent="."]
 wait_time = 10.0
