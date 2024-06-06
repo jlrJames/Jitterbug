@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd164seabwcdx"]
+[gd_scene load_steps=8 format=3 uid="uid://cd164seabwcdx"]
 
 [ext_resource type="Script" path="res://Scripts/player_shotgun_bullet.gd" id="1_kbn27"]
 [ext_resource type="Texture2D" uid="uid://dv8hpd503bpp" path="res://Assets/Sprites/Player Single Bullet.png" id="2_pghto"]
+[ext_resource type="AudioStream" uid="uid://b5g3yprjs5xo" path="res://Assets/playershoot.mp3" id="3_en0ax"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y8pin"]
 radius = 63.0
@@ -66,6 +67,10 @@ libraries = {
 [node name="ShotgunTimer" type="Timer" parent="." groups=["PlayerBullet"]]
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." groups=["PlayerBullet"]]
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_en0ax")
+volume_db = -25.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
