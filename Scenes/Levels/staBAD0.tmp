@@ -1013,19 +1013,21 @@ script = ExtResource("6_01cj6")
 animation_speed = 0.96
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_left = -512.0
 offset_top = -266.0
 offset_right = 665.0
 offset_bottom = 412.0
-mouse_filter = 2
 color = Color(0, 0, 0, 0.392157)
 
 [node name="Heart-menu" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(444, 296)
 scale = Vector2(3.78125, 3.78125)
 texture = ExtResource("2_hk1sb")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -195.0
 offset_top = 93.0
 offset_right = 205.0
@@ -1035,22 +1037,31 @@ text = "An Emotional Bullet Hell"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = -43.0
+offset_top = 214.0
+offset_right = 48.0
+offset_bottom = 245.0
+text = "Play Game"
+
+[node name="AnimatedButton" parent="." instance=ExtResource("5_ht26p")]
+position = Vector2(-16, 234)
+
 [node name="WallTileMap" parent="." instance=ExtResource("2_lbv3v")]
+visible = false
 
 [node name="Title" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-54, 34)
 scale = Vector2(7.56, 7.56)
 texture = ExtResource("3_v5j5w")
-
-[node name="AnimatedButton" parent="." instance=ExtResource("5_ht26p")]
-position = Vector2(-21, 272)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -510.0
 offset_top = -257.0
 offset_right = 667.0
 offset_bottom = 421.0
-mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="fade in" type="AnimationPlayer" parent="ColorRect"]
@@ -1058,3 +1069,5 @@ libraries = {
 "": SubResource("AnimationLibrary_dc2ol")
 }
 script = ExtResource("7_kahvg")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

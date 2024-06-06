@@ -85,7 +85,6 @@ libraries = {
 }
 
 [node name="player_hitbox" type="Area2D" parent="." groups=["Player"]]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox" groups=["Player"]]
 position = Vector2(0, 10)
