@@ -5,10 +5,8 @@ var direction: Vector2
 @onready var animation = $AnimationPlayer
 
 func _ready():
-	animation.play("fire")
-	$ShotgunTimer.start(.5)
-	$ShootSound.play()
-
+	#animation.play("fire")
+	$ShotgunTimer.start(1)
 
 func _process(delta):
 	translate(direction.normalized() * speed * delta)

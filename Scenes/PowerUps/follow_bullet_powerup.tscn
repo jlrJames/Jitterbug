@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7l54b6icuuyc"]
+
+[ext_resource type="Texture2D" uid="uid://dsfr7crnulq12" path="res://Assets/Sprites/target_powerup.png" id="1_f0vrk"]
+[ext_resource type="Script" path="res://Scripts/follow_bullet_powerup.gd" id="1_o51ha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trss0"]
+size = Vector2(35, 34)
+
+[sub_resource type="Animation" id="Animation_7likl"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_wytom"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ttn4f"]
+_data = {
+"Idle": SubResource("Animation_7likl"),
+"RESET": SubResource("Animation_wytom")
+}
+
+[node name="FollowBulletPowerup" type="Area2D" groups=["PowerUp"]]
+script = ExtResource("1_o51ha")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["PowerUp"]]
+texture = ExtResource("1_f0vrk")
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["PowerUp"]]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_trss0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["PowerUp"]]
+libraries = {
+"": SubResource("AnimationLibrary_ttn4f")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

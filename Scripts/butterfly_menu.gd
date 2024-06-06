@@ -16,6 +16,7 @@ const shooter_timer_wait_time = .5
 const radius = 20
 const spawn_point_count = 1
 signal enemy_die
+@export var animation_speed: float = 1.1
 
 
 func _ready():
@@ -29,7 +30,9 @@ func _ready():
 		rotater.add_child(spawn_point)
 		
 	shoot_timer.wait_time = shooter_timer_wait_time
-	shoot_timer.start()
+	
+
+
 	
 func _process(delta):
 	move(delta)
@@ -53,6 +56,7 @@ func _on_timer_timeout():
 
 func update_animations():
 	animation.play("move")
+	animation.speed_scale = animation_speed
 	if dir.x == -1:
 		sprite.flip_h = true
 	elif dir.x == 1:
@@ -86,14 +90,9 @@ func die():
 func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):
 		#print("Enemy Hit!")
-		print(area.name)
-		if area.name == "PlayerIncreasedDamageBullet":
-			currentHealth -= 3
-		else:
-			currentHealth -= 1
+		currentHealth -= 1
+		if currentHealth <= 0:
+			die()
 		sprite.modulate = Color(10,10,10,10)
 		await get_tree().create_timer(0.05).timeout
 		sprite.modulate = Color.WHITE
-		
-	if currentHealth <= 0:
-		die()
