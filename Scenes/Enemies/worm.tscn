@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbttq1ob7vmyc"]
+
+[ext_resource type="Texture2D" uid="uid://cib2fypk74jix" path="res://Assets/Sprites/worm.png" id="1_4v2ky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k50d"]
+
+[sub_resource type="Animation" id="Animation_hrwbh"]
+resource_name = "walk"
+length = 1.05
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3), Vector2i(0, 4), Vector2i(0, 5), Vector2i(0, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_oghvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q7rw1"]
+_data = {
+"RESET": SubResource("Animation_oghvc"),
+"walk": SubResource("Animation_hrwbh")
+}
+
+[node name="Worm" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4v2ky")
+vframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_3k50d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q7rw1")
+}
