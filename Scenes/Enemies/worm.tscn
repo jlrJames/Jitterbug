@@ -1,8 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbttq1ob7vmyc"]
+[gd_scene load_steps=9 format=3 uid="uid://cbttq1ob7vmyc"]
 
 [ext_resource type="Texture2D" uid="uid://cib2fypk74jix" path="res://Assets/Sprites/worm.png" id="1_4v2ky"]
+[ext_resource type="Script" path="res://Scripts/worm.gd" id="1_u76xr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k50d"]
+[sub_resource type="Animation" id="Animation_oghvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_hrwbh"]
 resource_name = "walk"
@@ -22,38 +36,66 @@ tracks/0/keys = {
 "values": [Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3), Vector2i(0, 4), Vector2i(0, 5), Vector2i(0, 6)]
 }
 
-[sub_resource type="Animation" id="Animation_oghvc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q7rw1"]
 _data = {
 "RESET": SubResource("Animation_oghvc"),
 "walk": SubResource("Animation_hrwbh")
 }
 
-[node name="Worm" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k50d"]
+size = Vector2(43.5, 20)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ximhh"]
+radius = 137.762
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gql2c"]
+size = Vector2(38.5, 15.75)
+
+[node name="Worm" type="CharacterBody2D" groups=["Enemy"]]
+position = Vector2(172, 89)
+scale = Vector2(2, 2)
+script = ExtResource("1_u76xr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Enemy"]]
 texture = ExtResource("1_4v2ky")
 vframes = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_3k50d")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Enemy"]]
 libraries = {
 "": SubResource("AnimationLibrary_q7rw1")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
+visible = false
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_3k50d")
+
+[node name="Move" type="Timer" parent="." groups=["Enemy"]]
+autostart = true
+
+[node name="Shoot" type="Timer" parent="." groups=["Enemy"]]
+
+[node name="Rotater" type="Node2D" parent="." groups=["Enemy"]]
+position = Vector2(0, 14)
+
+[node name="PlayerEnter" type="Area2D" parent="." groups=["Enemy"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEnter" groups=["Enemy"]]
+position = Vector2(0, 13.5)
+shape = SubResource("CircleShape2D_ximhh")
+debug_color = Color(0.561378, 0.557344, 0.134209, 0.42)
+
+[node name="EnemyHurtBox" type="Area2D" parent="." groups=["Enemy"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox" groups=["Enemy"]]
+position = Vector2(1, 15.375)
+shape = SubResource("RectangleShape2D_gql2c")
+debug_color = Color(0.399319, 0.0326333, 0.0307207, 0.42)
+
+[connection signal="timeout" from="Move" to="." method="_on_move_timeout"]
+[connection signal="timeout" from="Shoot" to="." method="_on_shoot_timeout"]
+[connection signal="body_entered" from="PlayerEnter" to="." method="_on_player_enter_body_entered"]
+[connection signal="body_exited" from="PlayerEnter" to="." method="_on_player_enter_body_exited"]
+[connection signal="area_entered" from="EnemyHurtBox" to="." method="_on_enemy_hurt_box_area_entered"]
