@@ -1,20 +1,20 @@
 extends CharacterBody2D
 
 const bullet_scene = preload("res://Scenes/Bullets/butterfly_bullet.tscn")
-const maxHealth = 3
+const maxHealth = 10
 var currentHealth = maxHealth
 @onready var shoot_timer = $Shoot
 @onready var rotater = $Rotater
-const speed = 40
+const speed = 20
 var dir: Vector2
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
 var player: CharacterBody2D
 var is_chase: bool
-const rotate_speed = 100
-const shooter_timer_wait_time = .8
-const radius = 20
-const spawn_point_count = 1
+const rotate_speed = 0
+const shooter_timer_wait_time = 1
+const radius = 10
+const spawn_point_count = 6
 signal enemy_die
 
 func _ready():
@@ -46,12 +46,12 @@ func move(delta):
 	move_and_slide()
 		
 func _on_move_timeout():
-	$Move.wait_time = choose([0.5, .8, 1.0])
+	$Move.wait_time = choose([0.8, .9, 1.0, 1.2])
 	if !is_chase:
 		dir = choose([Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN])
 
 func update_animations():
-	animation.play("move")
+	animation.play("walk")
 	if dir.x == -1:
 		sprite.flip_h = true
 	elif dir.x == 1:
@@ -60,7 +60,6 @@ func update_animations():
 func choose(array):
 	array.shuffle()
 	return array.front()
-
 
 func _on_shoot_timeout():
 	for s in rotater.get_children():
@@ -76,11 +75,10 @@ func _on_player_enter_body_entered(body):
 func _on_player_enter_body_exited(body):
 	if body == Global.playerBody:
 		is_chase = false
-		
+
 func die():
 	queue_free()
 	enemy_die.emit()
-	
 
 func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):
