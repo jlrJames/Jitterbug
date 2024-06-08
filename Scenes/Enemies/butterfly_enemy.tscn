@@ -51,6 +51,7 @@ radius = 271.398
 radius = 37.054
 
 [node name="ButterflyEnemy" type="CharacterBody2D" groups=["Enemy"]]
+position = Vector2(428, 250)
 script = ExtResource("1_n4ic4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Enemy"]]
@@ -90,7 +91,7 @@ position = Vector2(-3, -6)
 shape = SubResource("CircleShape2D_rt0m0")
 debug_color = Color(0.429307, 0.0461968, 0.0148109, 0.513726)
 
-[connection signal="timeout" from="Move" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Move" to="." method="_on_move_timeout"]
 [connection signal="timeout" from="Shoot" to="." method="_on_shoot_timeout"]
 [connection signal="body_entered" from="PlayerEnter" to="." method="_on_player_enter_body_entered"]
 [connection signal="body_exited" from="PlayerEnter" to="." method="_on_player_enter_body_exited"]

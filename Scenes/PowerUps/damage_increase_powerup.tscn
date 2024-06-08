@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1rhjises43vv"]
+
+[ext_resource type="Texture2D" uid="uid://boqhua83pyxe5" path="res://Assets/Sprites/increased_damage_powerup.png" id="1_7qmbk"]
+[ext_resource type="Script" path="res://Scripts/damage_increase_powerup.gd" id="1_s51kg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjhsa"]
+size = Vector2(26, 34)
+
+[sub_resource type="Animation" id="Animation_4daik"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_ivc55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ix8i"]
+_data = {
+"Idle": SubResource("Animation_4daik"),
+"RESET": SubResource("Animation_ivc55")
+}
+
+[node name="DamageIncreasePowerup" type="Area2D" groups=["PowerUp"]]
+script = ExtResource("1_s51kg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["PowerUp"]]
+texture = ExtResource("1_7qmbk")
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["PowerUp"]]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_xjhsa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["PowerUp"]]
+libraries = {
+"": SubResource("AnimationLibrary_5ix8i")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

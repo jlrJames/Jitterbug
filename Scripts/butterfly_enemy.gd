@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const bullet_scene = preload("res://Scenes/Bullets/butterfly_bullet.tscn")
-@export var maxHealth = 3
+const maxHealth = 3
 var currentHealth = maxHealth
 @onready var shoot_timer = $Shoot
 @onready var rotater = $Rotater
@@ -12,11 +12,10 @@ var dir: Vector2
 var player: CharacterBody2D
 var is_chase: bool
 const rotate_speed = 100
-const shooter_timer_wait_time = .5
+const shooter_timer_wait_time = .8
 const radius = 20
 const spawn_point_count = 1
 signal enemy_die
-
 
 func _ready():
 	is_chase = false
@@ -45,8 +44,8 @@ func move(delta):
 	if !is_chase:
 		velocity += dir * speed * delta
 	move_and_slide()
-
-func _on_timer_timeout():
+		
+func _on_move_timeout():
 	$Move.wait_time = choose([0.5, .8, 1.0])
 	if !is_chase:
 		dir = choose([Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN])
@@ -86,9 +85,14 @@ func die():
 func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):
 		#print("Enemy Hit!")
-		currentHealth -= 1
-		if currentHealth <= 0:
-			die()
+		print(area.name)
+		if area.name == "PlayerIncreasedDamageBullet":
+			currentHealth -= 3
+		else:
+			currentHealth -= 1
 		sprite.modulate = Color(10,10,10,10)
 		await get_tree().create_timer(0.05).timeout
 		sprite.modulate = Color.WHITE
+		
+	if currentHealth <= 0:
+		die()

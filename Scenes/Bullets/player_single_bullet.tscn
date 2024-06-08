@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b165ca0fxleev"]
+[gd_scene load_steps=8 format=3 uid="uid://b165ca0fxleev"]
 
 [ext_resource type="Script" path="res://Scripts/player_single_bullet.gd" id="1_bc0f4"]
 [ext_resource type="Texture2D" uid="uid://dv8hpd503bpp" path="res://Assets/Sprites/Player Single Bullet.png" id="2_1v0iu"]
+[ext_resource type="AudioStream" uid="uid://c462734cnw831" path="res://Assets/SingularLaserShot.mp3" id="3_2tma7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8sbmb"]
 radius = 63.6241
@@ -69,6 +70,9 @@ libraries = {
 }
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2tma7")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
