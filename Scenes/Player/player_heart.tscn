@@ -72,7 +72,6 @@ radius = 38.0
 [node name="PlayerHeart" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_o8jyl")
-fire_type = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Player"]]
 scale = Vector2(1.64844, 1.63281)
@@ -86,7 +85,6 @@ libraries = {
 }
 
 [node name="player_hitbox" type="Area2D" parent="." groups=["Player"]]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox" groups=["Player"]]
 position = Vector2(0, 10)
@@ -108,10 +106,26 @@ position = Vector2(-2, 10)
 shape = SubResource("CircleShape2D_m68m7")
 debug_color = Color(0.444043, 0.419314, 0.0911384, 0.42)
 
-[node name="SpeedBoost" type="Timer" parent="."]
-wait_time = 3.0
+[node name="SpeedBoostTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="SheildTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="ShotgunTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="FollowTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="IncreasedDamageTimer" type="Timer" parent="."]
+wait_time = 10.0
 
 [connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
 [connection signal="area_entered" from="player_pick_up" to="." method="_on_player_pick_up_area_entered"]
-[connection signal="timeout" from="SpeedBoost" to="." method="_on_speed_boost_timeout"]
+[connection signal="timeout" from="SpeedBoostTimer" to="." method="_on_speed_boost_timeout"]
+[connection signal="timeout" from="SheildTimer" to="." method="_on_sheild_timer_timeout"]
+[connection signal="timeout" from="ShotgunTimer" to="." method="_on_shotgun_timer_timeout"]
+[connection signal="timeout" from="FollowTimer" to="." method="_on_follow_timer_timeout"]
+[connection signal="timeout" from="IncreasedDamageTimer" to="." method="_on_increased_damage_timer_timeout"]

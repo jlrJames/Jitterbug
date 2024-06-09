@@ -21,7 +21,7 @@ func _process(delta):
 	var cur_scene_name = get_tree().current_scene
 	if cur_scene_name:
 		real_name = cur_scene_name.name
-	print(real_name)
+	#print(real_name)
 	if real_name != "gameOver" and real_name != "Win" and Global.playerBody and Global.playerBody.position:
 		self.position = Global.playerBody.position
 	

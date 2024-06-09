@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlla4rdg72em0"]
+
+[ext_resource type="Script" path="res://Scripts/play_game_button.gd" id="1_1jjem"]
+[ext_resource type="Texture2D" uid="uid://cxynn2jc426lu" path="res://Assets/Menus/playbutton.png" id="1_43l0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6kwk"]
+atlas = ExtResource("1_43l0d")
+region = Rect2(0, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsqkv"]
+atlas = ExtResource("1_43l0d")
+region = Rect2(100, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omsv2"]
+atlas = ExtResource("1_43l0d")
+region = Rect2(200, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuiy4"]
+atlas = ExtResource("1_43l0d")
+region = Rect2(300, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2anqm"]
+atlas = ExtResource("1_43l0d")
+region = Rect2(400, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e62k5"]
+atlas = ExtResource("1_43l0d")
+region = Rect2(500, 0, 100, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vl0h2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6kwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsqkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omsv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuiy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2anqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e62k5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ada2w"]
+size = Vector2(100, 50)
+
+[node name="AnimatedButton" type="Node2D"]
+position = Vector2(402, 388)
+script = ExtResource("1_1jjem")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vl0h2")
+frame_progress = 0.0976079
+speed_scale = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ada2w")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
