@@ -1238,6 +1238,7 @@ texture = ExtResource("3_v5j5w")
 position = Vector2(-21, 272)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
 offset_left = -510.0
 offset_top = -257.0
 offset_right = 3497.0
