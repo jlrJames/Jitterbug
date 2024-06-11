@@ -23,7 +23,7 @@ func when_enemy_die():
 	cur_enemy_count = self.get_meta("num_enemies")
 	cur_enemy_count -= 1
 	print(cur_enemy_count)
-	if cur_enemy_count == 0:
+	if cur_enemy_count <= 0:
 		get_tree().change_scene_to_file(str(self.get_meta("next_level_scene")))
 	else:
 		self.set_meta("num_enemies", cur_enemy_count)

@@ -55,961 +55,1153 @@ script = ExtResource("1_gwu36")
 [node name="ButterflyEnemy" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(566, -9)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy2" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-205, -140)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy3" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-144, 319)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy4" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(34, -174)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy5" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(332, -6)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy6" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-334, 229)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy7" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(146, 206)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy8" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(286, -170)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy9" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(477, 210)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy10" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-294, 79)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy11" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-233, 538)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy12" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-55, 45)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy13" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(243, 213)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy14" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-423, 448)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy15" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(57, 425)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy16" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(197, 49)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy17" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(188, -64)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy18" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-583, -195)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy19" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-522, 264)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy20" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-344, -229)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy21" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-46, -61)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy22" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-712, 174)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy23" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-232, 151)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy24" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-92, -225)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy25" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(99, 155)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy26" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-672, 24)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy27" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-611, 483)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy28" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-433, -10)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy29" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-135, 158)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy30" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-801, 393)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy31" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-321, 370)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy32" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-181, -6)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy33" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(1092, 45)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy34" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(321, -86)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy35" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(382, 373)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy36" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(560, -120)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy37" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(858, 48)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy38" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(192, 283)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy39" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(672, 260)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy40" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(812, -116)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy41" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(1003, 264)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy42" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(232, 133)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy43" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(293, 592)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy44" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(471, 99)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy45" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(769, 267)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy46" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(103, 502)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy47" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(583, 479)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy48" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(723, 103)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy49" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(714, -10)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy50" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-57, -141)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy51" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(4, 318)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy52" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(182, -175)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy53" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(480, -7)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy54" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-186, 228)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy55" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(294, 205)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy56" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(434, -171)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy57" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(625, 209)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy58" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-146, 78)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy59" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-85, 537)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy60" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(93, 44)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy61" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(391, 212)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy62" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-275, 447)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy63" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(205, 424)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy64" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(345, 48)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy65" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(1174, -432)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy66" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(403, -563)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy67" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(464, -104)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy68" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(642, -597)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy69" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(940, -429)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy70" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(274, -194)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy71" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(754, -217)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy72" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(894, -593)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy73" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(1085, -213)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy74" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(314, -344)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy75" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(375, 115)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy76" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(553, -378)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy77" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(851, -210)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy78" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(185, 25)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy79" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(665, 2)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy80" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(805, -374)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy81" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(796, -487)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy82" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(25, -618)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy83" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(86, -159)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy84" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(264, -652)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy85" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(562, -484)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy86" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-104, -249)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy87" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(376, -272)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy88" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(516, -648)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy89" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(707, -268)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy90" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-64, -399)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy91" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-3, 60)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy92" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(175, -433)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy93" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(473, -265)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy94" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-193, -30)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy97" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(427, 87)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy98" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-344, -44)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy99" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-283, 415)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy100" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-105, -78)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy101" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(193, 90)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy102" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-473, 325)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy103" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(7, 302)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy104" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(147, -74)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy105" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(338, 306)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy106" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-433, 175)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy107" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-372, 634)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy108" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-194, 141)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy109" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(104, 309)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy110" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-562, 544)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy111" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-82, 521)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy112" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(58, 145)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy113" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(49, 32)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy114" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-722, -99)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy115" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-661, 360)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy116" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-483, -133)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy117" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-185, 35)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy118" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-851, 270)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy119" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-371, 247)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy120" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-231, -129)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy121" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-40, 251)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy122" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-811, 120)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy123" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-750, 579)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy124" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-572, 86)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy125" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-274, 254)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy126" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-940, 489)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy127" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-460, 466)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy128" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-320, 90)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy129" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(953, 141)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy130" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(182, 10)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy131" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(243, 469)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy132" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(421, -24)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy133" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(719, 144)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy134" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(53, 379)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy135" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(533, 356)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy136" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(673, -20)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy137" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(864, 360)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy138" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(93, 229)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy139" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(154, 688)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy140" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(332, 195)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy141" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(630, 363)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy142" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-36, 598)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy143" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(444, 575)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy144" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(584, 199)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy145" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(575, 86)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy146" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-196, -45)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy147" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-135, 414)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy148" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(43, -79)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy149" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(341, 89)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy150" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-325, 324)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy151" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(155, 301)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy152" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(295, -75)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy153" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(486, 305)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy154" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-285, 174)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy155" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-224, 633)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy156" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-46, 140)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy157" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(252, 308)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy158" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-414, 543)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy159" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(66, 520)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy160" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(206, 144)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy161" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(1035, -336)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy162" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(264, -467)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy163" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(325, -8)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy164" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(503, -501)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy165" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(801, -333)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy166" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(135, -98)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy167" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(615, -121)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy168" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(755, -497)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy169" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(946, -117)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy170" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(175, -248)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy171" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(236, 211)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy172" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(414, -282)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy173" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(712, -114)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy174" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(46, 121)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy175" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(526, 98)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy176" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(666, -278)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy177" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(657, -391)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy178" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-114, -522)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy179" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-53, -63)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy180" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(125, -556)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy181" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(423, -388)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy182" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-243, -153)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy183" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(237, -176)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy184" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(377, -552)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy185" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(568, -172)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.02
 
 [node name="ButterflyEnemy186" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-203, -303)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.01
 
 [node name="ButterflyEnemy187" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-142, 156)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 1.1
 
 [node name="ButterflyEnemy188" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(36, -337)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.99
 
 [node name="ButterflyEnemy189" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(334, -169)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.98
 
 [node name="ButterflyEnemy190" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(-332, 66)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.97
 
 [node name="ButterflyEnemy191" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(148, 43)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy192" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(288, -333)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ButterflyEnemy95" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(287, -53)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.95
 
 [node name="ButterflyEnemy96" parent="CanvasGroup" instance=ExtResource("2_ehsdi")]
 position = Vector2(427, -429)
 script = ExtResource("6_01cj6")
+maxHealth = 3
 animation_speed = 0.96
 
 [node name="ColorRect2" type="ColorRect" parent="."]
