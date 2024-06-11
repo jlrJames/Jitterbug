@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlla4rdg72em0"]
+[gd_scene load_steps=12 format=3 uid="uid://dlla4rdg72em0"]
 
 [ext_resource type="Script" path="res://Scripts/play_game_button.gd" id="1_1jjem"]
 [ext_resource type="Texture2D" uid="uid://cxynn2jc426lu" path="res://Assets/Menus/playbutton.png" id="1_43l0d"]
+[ext_resource type="AudioStream" uid="uid://b6bchf5bpfj2m" path="res://Assets/heartbeat.mp3" id="3_fttfc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6kwk"]
 atlas = ExtResource("1_43l0d")
@@ -54,10 +55,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ada2w"]
-size = Vector2(100, 50)
+size = Vector2(107.5, 56.6666)
 
 [node name="AnimatedButton" type="Node2D"]
 position = Vector2(402, 388)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_1jjem")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -68,7 +70,13 @@ speed_scale = 2.0
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.416656, 0)
 shape = SubResource("RectangleShape2D_ada2w")
+
+[node name="ClickHeartBeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fttfc")
+volume_db = -15.0
+pitch_scale = 1.2
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

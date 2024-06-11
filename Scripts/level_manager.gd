@@ -16,15 +16,16 @@ func _on_player_heart_health_zero():
 
 
 func when_enemy_die():
-	print("HERE")
 	await get_tree().create_timer(3).timeout
-	print("HERE")
 	var cur_enemy_count
 	cur_enemy_count = self.get_meta("num_enemies")
 	cur_enemy_count -= 1
-	print(cur_enemy_count)
+	print("enemy count: ", cur_enemy_count)
 	if cur_enemy_count == 0:
-		get_tree().change_scene_to_file(str(self.get_meta("next_level_scene")))
+		$PassPlayer.play()
+		# added null check for a random crash when trying to change scene
+		if get_tree():
+			get_tree().change_scene_to_file(str(self.get_meta("next_level_scene")))
 	else:
 		self.set_meta("num_enemies", cur_enemy_count)
 

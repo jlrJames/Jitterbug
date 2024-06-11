@@ -19,4 +19,5 @@ func _on_area_2d_mouse_exited():
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		$ClickHeartBeat.play()
 		get_tree().change_scene_to_file("res://Scenes/Levels/test_death.tscn")
