@@ -90,14 +90,12 @@ func die():
 func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):
 		#print("Enemy Hit!")
-		print(area.name)
-		if area.name == "PlayerIncreasedDamageBullet":
-			currentHealth -= 3
-		else:
-			currentHealth -= 1
-		sprite.modulate = Color(10,10,10,10)
-		await get_tree().create_timer(0.05).timeout
-		sprite.modulate = Color.WHITE
+		#print(area.name)
+		if currentHealth > 0:
+			if area.name == "PlayerIncreasedDamageBullet":
+				currentHealth -= 3
+			else:
+				currentHealth -= 1
 		
 	if currentHealth <= 0 and not death_lock:
 		death_lock = true # prevents multiple death signals

@@ -81,7 +81,6 @@ func _on_player_enter_body_exited(body):
 func die():
 	queue_free()
 	enemy_die.emit()
-	
 
 func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):

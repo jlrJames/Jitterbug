@@ -44,7 +44,6 @@ position = Vector2(986, 264)
 [node name="Camera2D" type="Camera2D" parent="PlayerHeart"]
 
 [node name="ButterflyEnemy" parent="." instance=ExtResource("5_gq5nt")]
-visible = false
 position = Vector2(168, 182)
 
 [node name="obstacle_fountain" parent="." instance=ExtResource("6_rdwyv")]
