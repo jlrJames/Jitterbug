@@ -6,6 +6,7 @@ var direction: Vector2
 
 func _ready():
 	#animation.play("fire")
+	$ShootSound.play()
 	pass
 
 func _process(delta):

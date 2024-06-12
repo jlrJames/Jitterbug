@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c42kvq6wgn7bd"]
+[gd_scene load_steps=3 format=3 uid="uid://c42kvq6wgn7bd"]
 
 [ext_resource type="Script" path="res://Scripts/level_manager.gd" id="1_1gctn"]
+[ext_resource type="AudioStream" uid="uid://bdhr00vrhaf1a" path="res://Assets/levelpass.mp3" id="2_3xmcl"]
 
 [node name="LevelManager" type="Node2D"]
 script = ExtResource("1_1gctn")
 metadata/on_death_scene = ""
 metadata/next_level_scene = ""
+
+[node name="PassPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3xmcl")
+volume_db = -30.0
+pitch_scale = 1.7

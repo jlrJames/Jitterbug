@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const bullet_scene = preload("res://Scenes/Bullets/butterfly_bullet.tscn")
-const maxHealth = 10
+const maxHealth = 6
 var currentHealth = maxHealth
 @onready var shoot_timer = $Shoot
 @onready var rotater = $Rotater
@@ -16,6 +16,8 @@ const shooter_timer_wait_time = 1
 const radius = 10
 const spawn_point_count = 6
 signal enemy_die
+var death_lock = false
+
 
 func _ready():
 	is_chase = false
@@ -90,9 +92,6 @@ func _on_enemy_hurt_box_area_entered(area):
 			else:
 				currentHealth -= 1
 		
-			if currentHealth <= 0:
-				die()
-			
-			sprite.modulate = Color(10,10,10,10)
-			await get_tree().create_timer(0.05).timeout
-			sprite.modulate = Color.WHITE
+	if currentHealth <= 0 and not death_lock:
+		death_lock = true # prevents multiple death signals
+		die()

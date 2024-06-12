@@ -4,4 +4,8 @@
 
 [node name="GameMusic" type="AudioStreamPlayer2D"]
 volume_db = -20.0
+max_distance = 1e+08
+attenuation = 1e-05
 script = ExtResource("1_lt6uw")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

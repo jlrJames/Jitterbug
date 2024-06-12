@@ -12,5 +12,6 @@ func _ready():
 	level_manager.set_meta("num_enemies", 9)
 	#print(level_manager.get_meta("num_enemies"))
 	
-	level_manager.set_meta("next_level_scene", "res://Scenes/Levels/level_4.gd")
+	level_manager.set_meta("next_level_scene", "res://Scenes/Levels/level_boss.tscn")
+  
 	#print(level_manager.get_meta("next_level_scene"))

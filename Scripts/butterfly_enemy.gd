@@ -16,6 +16,7 @@ const shooter_timer_wait_time = .8
 const radius = 20
 const spawn_point_count = 1
 signal enemy_die
+var dead = false
 
 func _ready():
 	is_chase = false
@@ -85,15 +86,15 @@ func _on_enemy_hurt_box_area_entered(area):
 	if area.is_in_group("PlayerBullet"):
 		#print("Enemy Hit!")
 		#print(area.name)
-		if currentHealth > 0:
-			if area.name == "PlayerIncreasedDamageBullet":
-				currentHealth -= 3
-			else:
-				currentHealth -= 1
-		
-			if currentHealth <= 0:
-				die()
-			
-			sprite.modulate = Color(10,10,10,10)
-			await get_tree().create_timer(0.05).timeout
-			sprite.modulate = Color.WHITE
+		if area.name == "PlayerIncreasedDamageBullet":
+			currentHealth -= 3
+		else:
+			currentHealth -= 1
+		sprite.modulate = Color(10,10,10,10)
+		await get_tree().create_timer(0.05).timeout
+		sprite.modulate = Color.WHITE
+	
+	# added dead check because enemy count decrement was duping
+	if currentHealth <= 0 and dead == false:
+		dead = true
+		die()

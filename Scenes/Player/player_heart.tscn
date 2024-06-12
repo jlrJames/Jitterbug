@@ -1,7 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cds34n7mo3tgp"]
+[gd_scene load_steps=16 format=3 uid="uid://cds34n7mo3tgp"]
 
 [ext_resource type="Script" path="res://Scripts/player_heart.gd" id="1_o8jyl"]
 [ext_resource type="Texture2D" uid="uid://c7ec2qows6qqe" path="res://Assets/Sprites/Player.png" id="2_5d2hc"]
+[ext_resource type="AudioStream" uid="uid://blekxqi10nvvr" path="res://Assets/damage.mp3" id="3_44ey6"]
+[ext_resource type="AudioStream" uid="uid://beolvbx6kujl6" path="res://Assets/damageup.mp3" id="3_lfthm"]
+[ext_resource type="AudioStream" uid="uid://c3sqp7okvlfm8" path="res://Assets/speedup.mp3" id="4_jrwfy"]
+[ext_resource type="AudioStream" uid="uid://hknxk1egd0g7" path="res://Assets/followup.mp3" id="4_kajb1"]
+[ext_resource type="AudioStream" uid="uid://dwixmo6yb630" path="res://Assets/sheildup.mp3" id="7_jf5rt"]
+[ext_resource type="AudioStream" uid="uid://bcaq2h3x35jqh" path="res://Assets/shotgun.mp3" id="8_nsq8y"]
 
 [sub_resource type="Animation" id="Animation_4ttga"]
 resource_name = "Idle"
@@ -120,6 +126,35 @@ wait_time = 10.0
 
 [node name="IncreasedDamageTimer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="DamageUpPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lfthm")
+volume_db = -20.0
+
+[node name="SpeedUpPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jrwfy")
+volume_db = -5.0
+pitch_scale = 1.72
+
+[node name="FollowUpPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kajb1")
+volume_db = -25.0
+pitch_scale = 0.75
+
+[node name="DamagePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_44ey6")
+volume_db = -30.0
+pitch_scale = 1.5
+
+[node name="SheildUpPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jf5rt")
+volume_db = -20.0
+pitch_scale = 1.1
+
+[node name="ShotgunPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nsq8y")
+volume_db = -20.0
+pitch_scale = 2.0
 
 [connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

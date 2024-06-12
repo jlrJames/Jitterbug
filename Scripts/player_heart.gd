@@ -8,7 +8,7 @@ var boostedSpeed = standardSpeed * 2
 var speedBoost = false
 var shieldPowerup = false
 var increasedDamage = false
-@export var maxHealth = 10
+@export var maxHealth = 15
 @onready var currentHealth = maxHealth
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -23,6 +23,8 @@ var increased_damage_bullet = preload("res://Scenes/Bullets/player_increased_dam
 # 3 - follow
 
 func _ready():
+	if Global.playerHealth:
+		currentHealth = Global.playerHealth
 	Global.playerBody = self
 
 func player_movement():
@@ -105,8 +107,10 @@ func _on_shot_timer_timeout():
 func _on_player_hitbox_area_entered(area):
 	if area.is_in_group("EnemyBullet") and !shieldPowerup:
 		#print("Bullet Hit")
+		$DamagePlayer.play()
 		currentHealth -= 1
 		healthChanged.emit()
+		Global.playerHealth = currentHealth
 		# Check if health is at 0, emit death signal
 		if self.currentHealth <= 0:
 			healthZero.emit()
@@ -148,30 +152,35 @@ func turn_off_everthing():
 
 func shotgun():
 	turn_off_everthing()
+	$ShotgunPlayer.play()
 	fire_type = 2
 	$ShotgunTimer.start()
 	sprite.modulate = Color.WHITE
 		
 func follow():
 	turn_off_everthing()
+	$FollowUpPlayer.play()
 	fire_type = 3
 	$FollowTimer.start()
 	sprite.modulate = Color.WHITE
 
 func speed_boost():
 	turn_off_everthing()
+	$SpeedUpPlayer.play()
 	$SpeedBoostTimer.start()
 	speedBoost = true
 	sprite.modulate = Color.YELLOW
 
 func shield():
 	turn_off_everthing()
+	$SheildUpPlayer.play()
 	$SheildTimer.start()
 	shieldPowerup = true
 	sprite.modulate = Color.SKY_BLUE
 	
 func increased_damage():
 	turn_off_everthing()
+	$DamageUpPlayer.play()
 	fire_type = 1
 	increasedDamage = true
 	$IncreasedDamageTimer.start()

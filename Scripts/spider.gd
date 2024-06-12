@@ -1,23 +1,30 @@
 extends CharacterBody2D
 
 const bullet_scene = preload("res://Scenes/Bullets/butterfly_bullet.tscn")
-const maxHealth = 1
+var maxHealth = 1
 var currentHealth = maxHealth
 @onready var shoot_timer = $Shoot
 @onready var rotater = $Rotater
-const speed = 80
+var speed = 100
 var dir: Vector2
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
 var player: CharacterBody2D
 var is_chase: bool
 const rotate_speed = 400
-const shooter_timer_wait_time = .5
+var shooter_timer_wait_time = .5
 const radius = 20
 const spawn_point_count = 4
 signal enemy_die
+var death_lock = false
 
 func _ready():
+	if get_tree().get_current_scene().get_name() == "level_boss":
+		self.speed = 200
+		self.maxHealth = 7
+		self.currentHealth = self.maxHealth
+		self.shooter_timer_wait_time = 0.1
+		print("BOSS Spider")
 	is_chase = false
 	var step = 2 * PI / spawn_point_count
 	for i in range(spawn_point_count):
@@ -90,9 +97,6 @@ func _on_enemy_hurt_box_area_entered(area):
 			else:
 				currentHealth -= 1
 		
-			if currentHealth <= 0:
-				die()
-			
-			sprite.modulate = Color(10,10,10,10)
-			await get_tree().create_timer(0.05).timeout
-			sprite.modulate = Color.WHITE
+	if currentHealth <= 0 and not death_lock:
+		death_lock = true # prevents multiple death signals
+		die()

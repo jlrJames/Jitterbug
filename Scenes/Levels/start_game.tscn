@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1yqa5ucirkge"]
+[gd_scene load_steps=13 format=3 uid="uid://c1yqa5ucirkge"]
 
 [ext_resource type="Script" path="res://Scripts/Start Game.gd" id="1_gwu36"]
 [ext_resource type="PackedScene" uid="uid://dci0hxs27qcsp" path="res://Scenes/Enemies/butterfly_enemy.tscn" id="2_ehsdi"]
 [ext_resource type="Texture2D" uid="uid://cl3xjsugm52w4" path="res://Assets/Menus/heart-menu.png" id="2_hk1sb"]
+[ext_resource type="PackedScene" uid="uid://bak3gbu4dvqmg" path="res://Scenes/Levels/background_tile_map.tscn" id="2_jqsda"]
 [ext_resource type="PackedScene" uid="uid://bfkmukb88bp7v" path="res://Scenes/Levels/wall_tile_map.tscn" id="2_lbv3v"]
 [ext_resource type="Texture2D" uid="uid://bkjndo1oxl4c1" path="res://Assets/Menus/title.png" id="3_v5j5w"]
 [ext_resource type="PackedScene" uid="uid://dlla4rdg72em0" path="res://Scenes/Extra/play_game_button.tscn" id="5_ht26p"]
@@ -49,6 +50,8 @@ _data = {
 [node name="Start Game" type="Node2D"]
 position = Vector2(502, 252)
 script = ExtResource("1_gwu36")
+
+[node name="BackgroundTileMap" parent="." instance=ExtResource("2_jqsda")]
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
@@ -1204,11 +1207,11 @@ script = ExtResource("6_01cj6")
 maxHealth = 3
 animation_speed = 0.96
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -512.0
-offset_top = -266.0
-offset_right = 665.0
-offset_bottom = 412.0
+[node name="TransparentRect" type="ColorRect" parent="."]
+offset_left = -6792.0
+offset_top = -5277.0
+offset_right = 13004.0
+offset_bottom = 8144.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.392157)
 
@@ -1222,6 +1225,7 @@ offset_left = -195.0
 offset_top = 93.0
 offset_right = 205.0
 offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.862745, 0.498039, 0.686275, 1)
 theme_override_font_sizes/font_size = 33
 text = "An Emotional Bullet Hell"
 horizontal_alignment = 1
@@ -1237,16 +1241,15 @@ texture = ExtResource("3_v5j5w")
 [node name="AnimatedButton" parent="." instance=ExtResource("5_ht26p")]
 position = Vector2(-21, 272)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = 1
-offset_left = -510.0
-offset_top = -257.0
-offset_right = 3497.0
-offset_bottom = 2555.0
+[node name="FadeInRect" type="ColorRect" parent="."]
+offset_left = -5349.0
+offset_top = -3959.0
+offset_right = 11257.0
+offset_bottom = 6883.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="fade in" type="AnimationPlayer" parent="ColorRect"]
+[node name="fade in" type="AnimationPlayer" parent="FadeInRect"]
 libraries = {
 "": SubResource("AnimationLibrary_dc2ol")
 }
