@@ -1,6 +1,6 @@
 extends AnimationPlayer
 
-@onready var color_rect = $".."
+@onready var credits_button = $CreditsButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

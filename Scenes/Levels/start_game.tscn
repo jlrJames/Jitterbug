@@ -1238,6 +1238,7 @@ texture = ExtResource("3_v5j5w")
 position = Vector2(-21, 272)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
 offset_left = -510.0
 offset_top = -257.0
 offset_right = 3497.0
@@ -1250,3 +1251,34 @@ libraries = {
 "": SubResource("AnimationLibrary_dc2ol")
 }
 script = ExtResource("7_kahvg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 1164.0
+offset_bottom = 656.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Singular and shorgun bullet sounds: https://pixabay.com/sound-effects/search/laser%20gun/"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Panel/Label"]
+layout_mode = 0
+offset_left = 1114.0
+offset_top = 5.0
+offset_right = 1146.0
+offset_bottom = 34.0
+text = "X"
+
+[node name="CreditsButton" type="Button" parent="."]
+offset_left = -73.0
+offset_top = 313.0
+offset_right = 29.0
+offset_bottom = 359.0
+text = "Credits"
+
+[connection signal="pressed" from="CanvasLayer/Panel/Label/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
