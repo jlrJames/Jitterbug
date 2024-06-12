@@ -35,3 +35,6 @@ func _on_butterfly_enemy_enemy_die():
 
 func _on_butterfly_enemy_2_enemy_die():
 	when_enemy_die()
+
+func _on_worm_enemy_die():
+	when_enemy_die()

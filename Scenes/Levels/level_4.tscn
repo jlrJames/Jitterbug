@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqc0ipwfhsch0"]
+[gd_scene load_steps=16 format=3 uid="uid://dqc0ipwfhsch0"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_4.gd" id="1_20y32"]
 [ext_resource type="PackedScene" uid="uid://bak3gbu4dvqmg" path="res://Scenes/Levels/background_tile_map.tscn" id="2_ltfie"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://djolqlqv2g2hj" path="res://Scenes/PowerUps/shield_powerup.tscn" id="11_h6rak"]
 [ext_resource type="PackedScene" uid="uid://bk42ikyp8mxas" path="res://Scenes/Objects/obstacle_fountain.tscn" id="12_7f1cb"]
 [ext_resource type="PackedScene" uid="uid://b0o5xleknho8d" path="res://Scenes/PowerUps/shotgun_powerup.tscn" id="13_xq3un"]
+[ext_resource type="PackedScene" uid="uid://cbttq1ob7vmyc" path="res://Scenes/Enemies/worm.tscn" id="15_i63bi"]
 
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_20y32")
@@ -53,9 +54,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ButterflyEnemy2" parent="." instance=ExtResource("7_fp6r3")]
 position = Vector2(790, 300)
-
-[node name="ButterflyEnemy3" parent="." instance=ExtResource("7_fp6r3")]
-position = Vector2(1164, 828)
 
 [node name="ButterflyEnemy5" parent="." instance=ExtResource("7_fp6r3")]
 position = Vector2(1814, 817)
@@ -145,10 +143,12 @@ position = Vector2(967, 2675)
 [node name="ShieldPowerup" parent="." instance=ExtResource("11_h6rak")]
 position = Vector2(637, 280)
 
+[node name="Worm" parent="." instance=ExtResource("15_i63bi")]
+position = Vector2(1169, 936)
+
 [connection signal="healthZero" from="PlayerHeart" to="LevelManager" method="_on_player_heart_health_zero"]
 [connection signal="shoot" from="PlayerHeart" to="BulletManager" method="_on_player_heart_shoot"]
 [connection signal="enemy_die" from="ButterflyEnemy2" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
-[connection signal="enemy_die" from="ButterflyEnemy3" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy5" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy6" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy8" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
@@ -161,3 +161,4 @@ position = Vector2(637, 280)
 [connection signal="enemy_die" from="ButterflyEnemy11" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy12" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy13" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
+[connection signal="enemy_die" from="Worm" to="LevelManager" method="_on_worm_enemy_die"]
