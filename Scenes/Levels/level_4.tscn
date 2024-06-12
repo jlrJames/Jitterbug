@@ -56,7 +56,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(790, 300)
 
 [node name="ButterflyEnemy5" parent="." instance=ExtResource("7_fp6r3")]
-position = Vector2(1814, 817)
+position = Vector2(1814, 874)
 
 [node name="ButterflyEnemy6" parent="." instance=ExtResource("7_fp6r3")]
 position = Vector2(1207, 2781)

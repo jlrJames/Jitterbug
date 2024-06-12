@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://yb45173cercc"]
+[gd_scene load_steps=17 format=3 uid="uid://yb45173cercc"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_5.gd" id="1_8cut1"]
 [ext_resource type="PackedScene" uid="uid://bak3gbu4dvqmg" path="res://Scenes/Levels/background_tile_map.tscn" id="2_j84r4"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bk42ikyp8mxas" path="res://Scenes/Objects/obstacle_fountain.tscn" id="12_ha66m"]
 [ext_resource type="PackedScene" uid="uid://bapxk1jg7inxa" path="res://Scenes/PowerUps/speed_powerup.tscn" id="13_dxov4"]
 [ext_resource type="PackedScene" uid="uid://d1rhjises43vv" path="res://Scenes/PowerUps/damage_increase_powerup.tscn" id="15_ip3j5"]
+[ext_resource type="PackedScene" uid="uid://8r1ahvr8xywl" path="res://Scenes/Enemies/spider.tscn" id="16_yietd"]
 
 [node name="level_5" type="Node2D"]
 script = ExtResource("1_8cut1")
@@ -52,14 +53,8 @@ texture_progress = ExtResource("8_pb218")
 script = ExtResource("9_3domu")
 metadata/_edit_use_anchors_ = true
 
-[node name="ButterflyEnemy2" parent="." instance=ExtResource("10_1h78g")]
-position = Vector2(900, 499)
-
-[node name="ButterflyEnemy3" parent="." instance=ExtResource("10_1h78g")]
-position = Vector2(915, 28)
-
 [node name="ButterflyEnemy5" parent="." instance=ExtResource("10_1h78g")]
-position = Vector2(733, 264)
+position = Vector2(917, 376)
 
 [node name="ButterflyEnemy6" parent="." instance=ExtResource("10_1h78g")]
 position = Vector2(2996, 319)
@@ -110,17 +105,11 @@ position = Vector2(2937, 996)
 
 [node name="FountainEnemy3" type="CanvasGroup" parent="."]
 
-[node name="ButterflyEnemy10" parent="." instance=ExtResource("10_1h78g")]
-position = Vector2(2756, 318)
-
 [node name="ButterflyEnemy11" parent="." instance=ExtResource("10_1h78g")]
 position = Vector2(3000, 193)
 
 [node name="ButterflyEnemy12" parent="." instance=ExtResource("10_1h78g")]
 position = Vector2(3219, 200)
-
-[node name="ButterflyEnemy13" parent="." instance=ExtResource("10_1h78g")]
-position = Vector2(2756, 213)
 
 [node name="SpeedPowerup2" parent="." instance=ExtResource("13_dxov4")]
 position = Vector2(1947, 617)
@@ -146,10 +135,20 @@ position = Vector2(3427, 1156)
 [node name="ButterflyEnemy17" parent="." instance=ExtResource("10_1h78g")]
 position = Vector2(3183, 1176)
 
+[node name="Spider" parent="." instance=ExtResource("16_yietd")]
+position = Vector2(905, 40)
+
+[node name="Spider2" parent="." instance=ExtResource("16_yietd")]
+position = Vector2(738, 249)
+
+[node name="Spider3" parent="." instance=ExtResource("16_yietd")]
+position = Vector2(2726, 277)
+
+[node name="Spider4" parent="." instance=ExtResource("16_yietd")]
+position = Vector2(2334, 255)
+
 [connection signal="healthZero" from="PlayerHeart" to="LevelManager" method="_on_player_heart_health_zero"]
 [connection signal="shoot" from="PlayerHeart" to="BulletManager" method="_on_player_heart_shoot"]
-[connection signal="enemy_die" from="ButterflyEnemy2" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
-[connection signal="enemy_die" from="ButterflyEnemy3" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy5" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy6" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy8" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
@@ -157,11 +156,13 @@ position = Vector2(3183, 1176)
 [connection signal="enemy_die" from="ButterflyEnemy7" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="FountainEnemy/ButterflyEnemy" to="LevelManager" method="_on_butterfly_enemy_enemy_die"]
 [connection signal="enemy_die" from="FountainEnemy2/ButterflyEnemy" to="LevelManager" method="_on_butterfly_enemy_enemy_die"]
-[connection signal="enemy_die" from="ButterflyEnemy10" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy11" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy12" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
-[connection signal="enemy_die" from="ButterflyEnemy13" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy14" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy15" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy16" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
 [connection signal="enemy_die" from="ButterflyEnemy17" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
+[connection signal="enemy_die" from="Spider" to="LevelManager" method="_on_spider_enemy_die"]
+[connection signal="enemy_die" from="Spider2" to="LevelManager" method="_on_spider_2_enemy_die"]
+[connection signal="enemy_die" from="Spider3" to="LevelManager" method="_on_spider_3_enemy_die"]
+[connection signal="enemy_die" from="Spider4" to="LevelManager" method="_on_spider_4_enemy_die"]

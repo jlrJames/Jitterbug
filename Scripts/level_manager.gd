@@ -16,7 +16,7 @@ func _on_player_heart_health_zero():
 
 
 func when_enemy_die():
-	await get_tree().create_timer(3).timeout
+	#await get_tree().create_timer(3).timeout
 	var cur_enemy_count
 	cur_enemy_count = self.get_meta("num_enemies")
 	cur_enemy_count -= 1
@@ -38,3 +38,20 @@ func _on_butterfly_enemy_2_enemy_die():
 
 func _on_worm_enemy_die():
 	when_enemy_die()
+
+func _on_spider_enemy_die():
+	when_enemy_die()
+
+func _on_spider_2_enemy_die():
+	when_enemy_die()
+
+func _on_spider_4_enemy_die():
+	when_enemy_die()
+
+func _on_spider_6_enemy_die():
+	when_enemy_die()
+
+
+func _on_spider_3_enemy_die():
+	when_enemy_die()
+

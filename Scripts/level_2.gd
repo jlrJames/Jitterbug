@@ -9,7 +9,7 @@ func _ready():
 	level_manager.set_meta("on_death_scene", "res://Scenes/Levels/game_over.tscn")
 	#print(level_manager.get_meta("on_death_scene"))
 	
-	level_manager.set_meta("num_enemies", 9)
+	level_manager.set_meta("num_enemies", 8) # The spiders just don't count on this level 
 	#print(level_manager.get_meta("num_enemies"))
 	
 	level_manager.set_meta("next_level_scene", "res://Scenes/Levels/level_3.tscn")
