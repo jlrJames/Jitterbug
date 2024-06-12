@@ -1242,6 +1242,7 @@ texture = ExtResource("3_v5j5w")
 position = Vector2(-21, 272)
 
 [node name="FadeInRect" type="ColorRect" parent="."]
+z_index = 1
 offset_left = -5349.0
 offset_top = -3959.0
 offset_right = 11257.0
