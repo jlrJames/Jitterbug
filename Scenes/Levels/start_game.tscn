@@ -1269,7 +1269,13 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Singular and shorgun bullet sounds: https://pixabay.com/sound-effects/search/laser%20gun/
 Sound: https://slaleky.itch.io/retro-and-electronic-music-pack
-Tileset: https://jamiebrownhill.itch.io/solaria-rural-village"
+Tileset: https://jamiebrownhill.itch.io/solaria-rural-village
+Remaining art assets and IP copyrighted 2024: Matthew Wingerden
+Sean Hershey
+Nathan Duke
+James Rounthwaite
+Evan Pomeroy
+"
 
 [node name="CloseButton" type="Button" parent="CanvasLayer/Panel/Label"]
 layout_mode = 0
