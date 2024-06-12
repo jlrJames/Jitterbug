@@ -33,6 +33,7 @@ metadata/num_enemies = 0
 position = Vector2(438, 248)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerHeart"]
+zoom = Vector2(0.75, 0.75)
 
 [node name="ButterflyEnemy" parent="." instance=ExtResource("4_pg3hw")]
 position = Vector2(168, 182)
@@ -52,6 +53,23 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ButterflyEnemy2" parent="." instance=ExtResource("4_pg3hw")]
 position = Vector2(710, 410)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = 453.0
+offset_right = 606.0
+offset_bottom = 530.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 459.0
+offset_right = 585.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.962189, 4.81307e-07, 0.497668, 1)
+theme_override_font_sizes/font_size = 20
+text = "A job interview and my first date since... on the same night!? 
+So many butterflies in my stomach"
 
 [connection signal="healthZero" from="PlayerHeart" to="LevelManager" method="_on_player_heart_health_zero"]
 [connection signal="shoot" from="PlayerHeart" to="BulletManager" method="_on_player_heart_shoot"]

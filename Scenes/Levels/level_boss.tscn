@@ -88,6 +88,25 @@ position = Vector2(2381, 1636)
 [node name="SpeedPowerup" parent="." instance=ExtResource("17_li0vt")]
 position = Vector2(1545, 1584)
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 2474.0
+offset_top = 1348.0
+offset_right = 2777.0
+offset_bottom = 1488.0
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 2476.0
+offset_top = 1352.0
+offset_right = 2746.0
+offset_bottom = 1473.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.962189, 4.81307e-07, 0.497668, 1)
+theme_override_font_sizes/font_size = 20
+text = "Calm!? Calm!? 
+How can I be calm?? 
+I'm not ready, I mean not 
+really ready to for this am I?"
+
 [connection signal="healthZero" from="PlayerHeart" to="LevelManager" method="_on_player_heart_health_zero"]
 [connection signal="shoot" from="PlayerHeart" to="BulletManager" method="_on_player_heart_shoot"]
 [connection signal="enemy_die" from="Worm" to="LevelManager" method="_on_worm_enemy_die"]

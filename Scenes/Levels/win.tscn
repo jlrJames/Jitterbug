@@ -18,7 +18,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.392157)
 
 [node name="Heart-menu" type="Sprite2D" parent="."]
-position = Vector2(869, 615)
+position = Vector2(846, 615)
 scale = Vector2(3.78125, 3.78125)
 texture = ExtResource("2_lwbf0")
 
@@ -34,13 +34,16 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 84.0
-offset_top = 474.0
-offset_right = 653.0
-offset_bottom = 529.0
+offset_left = 23.0
+offset_top = 415.0
+offset_right = 774.0
+offset_bottom = 644.0
 theme_override_colors/font_color = Color(0.862745, 0.498039, 0.686275, 1)
 theme_override_font_sizes/font_size = 40
-text = "Thanks for playing our demo! "
+text = "You know she would want this for you.
+You're heart rate begins to slow.
+Deep breathe in.
+Smile, and you open the door"
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(383, 247)

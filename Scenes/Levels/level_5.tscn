@@ -147,6 +147,39 @@ position = Vector2(2726, 277)
 [node name="Spider4" parent="." instance=ExtResource("16_yietd")]
 position = Vector2(2334, 255)
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1163.0
+offset_top = 1.0
+offset_right = 1343.0
+offset_bottom = 78.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1169.0
+offset_top = 7.0
+offset_right = 1347.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.962189, 4.81307e-07, 0.497668, 1)
+theme_override_font_sizes/font_size = 20
+text = "One step at a time"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 2208.0
+offset_top = -13.0
+offset_right = 2388.0
+offset_bottom = 64.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 2214.0
+offset_top = -7.0
+offset_right = 2392.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.962189, 4.81307e-07, 0.497668, 1)
+theme_override_font_sizes/font_size = 20
+text = "I'm gonna nail
+this interview"
+
 [connection signal="healthZero" from="PlayerHeart" to="LevelManager" method="_on_player_heart_health_zero"]
 [connection signal="shoot" from="PlayerHeart" to="BulletManager" method="_on_player_heart_shoot"]
 [connection signal="enemy_die" from="ButterflyEnemy5" to="LevelManager" method="_on_butterfly_enemy_2_enemy_die"]
