@@ -5,7 +5,7 @@ const maxHealth = 1
 var currentHealth = maxHealth
 @onready var shoot_timer = $Shoot
 @onready var rotater = $Rotater
-const speed = 80
+const speed = 100
 var dir: Vector2
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D

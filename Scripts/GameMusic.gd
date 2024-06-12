@@ -6,6 +6,7 @@ func play_track(track):
 	if self.stream != track:
 		self.stream = track
 		self.play()
+	self.set_autoplay(true)
 
 
 func _ready():
@@ -28,3 +29,7 @@ func _process(delta):
 	#if real_name != "gameOver" and real_name != "Win" and Global.playerBody and Global.playerBody.position:
 	#	self.position = Global.playerBody.position
 	
+
+
+func _on_finished():
+	self.play()
