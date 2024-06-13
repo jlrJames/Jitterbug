@@ -91,55 +91,58 @@ position = Vector2(351, 28)
 position = Vector2(1250, 897)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 624.0
-offset_top = 133.0
-offset_right = 743.0
-offset_bottom = 210.0
+offset_left = 1145.0
+offset_top = 164.0
+offset_right = 1321.0
+offset_bottom = 274.0
+color = Color(0.917647, 0.717647, 0.780392, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 632.0
-offset_top = 140.0
-offset_right = 746.0
-offset_bottom = 206.0
+offset_left = 1150.0
+offset_top = 166.0
+offset_right = 1306.0
+offset_bottom = 259.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.962189, 4.81307e-07, 0.497668, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "Interview 
 CRUSHED!"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 866.0
-offset_top = 1001.0
-offset_right = 1115.0
-offset_bottom = 1106.0
+offset_left = 671.0
+offset_top = 815.0
+offset_right = 1065.0
+offset_bottom = 989.0
+color = Color(0.917647, 0.717647, 0.780392, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = 1692.0
-offset_top = 2271.0
-offset_right = 1841.0
-offset_bottom = 2376.0
+offset_left = 1668.0
+offset_top = 2361.0
+offset_right = 1960.0
+offset_bottom = 2568.0
+color = Color(0.917647, 0.717647, 0.780392, 1)
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 1693.0
-offset_top = 2273.0
-offset_right = 1921.0
-offset_bottom = 2394.0
+offset_top = 2375.0
+offset_right = 2107.0
+offset_bottom = 2564.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.962189, 4.81307e-07, 0.497668, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "I won't sleep...
 for...too...
 long...
 ..."
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 880.0
-offset_top = 1007.0
-offset_right = 1108.0
-offset_bottom = 1097.0
+offset_left = 683.0
+offset_top = 826.0
+offset_right = 1047.0
+offset_bottom = 967.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.962189, 4.81307e-07, 0.497668, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 text = "Time to take a breather
 Just gonna let my eyes 
 rest for a little"
