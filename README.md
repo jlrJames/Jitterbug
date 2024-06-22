@@ -1,5 +1,7 @@
-# Jitterbug README
-## An emotional bullet hell
+# Jitterbug
+An emotional bullet hell.  
+Play Online: https://seanhershey.itch.io/jitterbug
+
 
 ## Workflow Management
 ### Assests, Scenes, & Scripts Folders
